@@ -14,7 +14,7 @@ module.exports = {
         amount: req.body.amount || 0.00,
         card: req.body.card || null
       })
-      .then(account => res.status(201).send(account))
+      .then(account => res.status(201).json(account))
       .catch(function (err) {
         next(err);
       });
