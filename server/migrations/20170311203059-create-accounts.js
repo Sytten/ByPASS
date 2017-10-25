@@ -1,28 +1,28 @@
 'use strict';
 module.exports = {
   up: function(queryInterface, Sequelize) {
-    return queryInterface.createTable('Account', {
-      UUID: {
-        allowNull: false,
-        autoIncrement: true,
+    return queryInterface.createTable('Accounts', {
+      id: {
         primaryKey: true,
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4
       },
-      Name: {
+      name: {
         allowNull: false,
         type: Sequelize.STRING
       },
-      Amount: {
+      amount: {
         allowNull: false,
         type: Sequelize.DOUBLE
       },
-      Type: {
+      type: {
         allowNull: false,
         type: Sequelize.STRING
-      },
+      }
     });
   },
   down: function(queryInterface, Sequelize) {
-    return queryInterface.dropTable('Account');
+    return queryInterface.dropTable('Accounts');
   }
 };
