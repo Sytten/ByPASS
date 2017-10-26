@@ -20,5 +20,5 @@ Please insert the following config (with your credentials) inside:
 
 ## Run
 - Install dependencies with [npm](https://www.npmjs.com/).
-- Start the database `docker-compose run -d`
+- Start the database `docker-compose up -d`
 - Start the server using `node server.js`
