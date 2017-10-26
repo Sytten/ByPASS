@@ -16,6 +16,9 @@ app.use(function(req, res, next) {
 var port = process.env.PORT || 3000;
 app.use('/api', routes);
 
+// serve static section of website
+app.use('/static', express.static('static'));
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
