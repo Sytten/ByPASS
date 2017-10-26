@@ -1,17 +1,17 @@
 var Accounts = require('../models').Accounts
 var InvalidAccount = require('../exceptions/invalidAccount')
-var AlreadyExist = require('../exceptions/alreadyExist')
+var UserExist = require('../exceptions/userExist')
 var verify = require('../helpers/parameters');
 
 module.exports = {
   create: function(req, res, next) {
     verify.verifyParameter(req.body.name, 'name');
     verify.verifyAccountTypeParameter(req.body.type, 'type');
- 
+
     Accounts.count({ where: {name: req.body.name} })
       .then(count => {
         if (count != 0) {
-          throw new AlreadyExist('Username:'+req.body.name+' alreay exist');
+          throw new UserExist('Username:'+req.body.name+' alreay exist');
         }else{
          return Accounts
              .create({

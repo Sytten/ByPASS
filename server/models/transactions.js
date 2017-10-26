@@ -6,11 +6,11 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4
     },
-    client: DataTypes.UUID,
+    client:   DataTypes.UUID,
     merchant: DataTypes.UUID,
-    item: DataTypes.UUID,
-    quantity: DataTypes.INTEGER,
-    price: DataTypes.DOUBLE
+    item:     DataTypes.UUID,
+    quantity: DataTypes.INTEGER.UNSIGNED,
+    price:    DataTypes.DOUBLE.UNSIGNED
   }, {
     updatedAt: false,
 

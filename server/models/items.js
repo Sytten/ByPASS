@@ -6,11 +6,12 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4
     },
-    merchant: DataTypes.UUID,
-    shortcut: DataTypes.INTEGER,
+    merchant:    DataTypes.UUID,
+    shortcut:    DataTypes.INTEGER,
+    name:        DataTypes.STRING,
     description: DataTypes.TEXT,
-    price: DataTypes.DOUBLE
-  }, {
+    price:       DataTypes.DOUBLE.UNSIGNED
+  },{
     classMethods: {
       associate: function(models) {
         // associations can be defined here
