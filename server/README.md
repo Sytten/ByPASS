@@ -3,7 +3,7 @@ The backend uses [NodeJs](https://nodejs.org/en/) and [Postgres](https://www.pos
 We provide a **docker-compose** file for your convenience.
 
 ## Configuration
-The backend needs access to a postgres database to work properly. To configure it, you will need to create a **config.json** file inside the config folder.
+The backend needs access to a postgres database to work properly. To configure it, you will need to create a **config** folder. Then create a **config.json** file inside the config folder.
 Please insert the following config (with your credentials) inside:
 
 ```
