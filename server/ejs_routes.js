@@ -13,8 +13,11 @@ router.get('/login', function(req, res) {
 
 
 // student transactions page 
-router.get('/student', function(req, res) {
-    res.render('student/transactions');
+router.post('/student', function(req, res) {
+	var user_id = req.body.id
+    res.render('student/transactions', {
+    	user_id: user_id
+    });
 });
 
 module.exports = router;
