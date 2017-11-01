@@ -16,6 +16,7 @@ router.get('/login', loginController.login);
 router.get('/student', studentController.transactions);
 	// student parts
 	router.post('/student/transactions_table', studentController.transactions_table);
+	router.post('/student/total', studentController.total);
 
 
 // merchant products page 
