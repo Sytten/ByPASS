@@ -3,6 +3,7 @@
   "main": "server.js",
   "dependencies": {
     "body-parser": "~1.0.1",
+    "ejs": "^1.0.0",
     "enum": "^2.4.0",
     "express": "~4.0.0",
     "mime-type": "^3.0.4",

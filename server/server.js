@@ -1,4 +1,5 @@
-var routes   = require('./routes')
+var routes         = require('./routes');
+var ejs_routes     = require('./ejs_routes');
 var express        = require('express');
 var bodyParser     = require('body-parser');
 var app            = express();
@@ -15,6 +16,13 @@ app.use(function(req, res, next) {
 
 var port = process.env.PORT || 3000;
 app.use('/api', routes);
+
+// set ejs as view engine
+app.set('view engine', 'ejs');
+app.use('/app', ejs_routes);
+
+// serve assets with static route
+app.use('/assets', express.static('assets'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>ByPASS - Student transactions</title>
+  <meta name="description" content="Payment network for local communities">
+  <meta name="author" content="ByPASS">
+
+  <link rel="stylesheet" href="/assets/css/base.css">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+	<h1>Transactions - <%= user_id %></h1>
+  <hr/>
+  <section class="center">
+    <table class="base_table">
+      <tr>
+        <th>Article</th>
+        <th>Montant</th>
+        <th>Destinataire</th>
+        <th>Date</th>
+      </tr>
+
+      <% for(var i = 0 ; i< 5; i++) { %>
+        <tr>
+          <td>Dépôt</td>
+          <td>50$</td>
+          <td>5@8 Génie</td>
+          <td>4 octobre 2014</td>
+        </tr>
+      <% } %>  
+    </table>
+    
+  </section>
+  <section>
+    <div class="black_box">
+      solde : 0.00$
+    </div>
+  </section>
+</body>
+</html>
