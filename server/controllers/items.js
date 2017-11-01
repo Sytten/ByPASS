@@ -1,5 +1,7 @@
 var Items = require('../models').Items
+var Accounts = require('../models').Accounts
 var verify = require('../helpers/parameters');
+var AddItemException = require('../exceptions/addItemException')
 
 module.exports = {
   list: function(req, res, next) {
@@ -10,7 +12,7 @@ module.exports = {
         }
       })
       .then(items => res.status(200).json(items))
-      .catch(function (err) {
+      .catch(function(err){
         next(err);
       });
   },
@@ -21,17 +23,31 @@ module.exports = {
     verify.verifyParameter(req.body.description, 'description');
     verify.verifyParameter(req.body.price, 'price');
 
-    return Items
-      .create({
-        merchant: req.body.merchant,
-        shortcut: req.body.shortcut,
-        description: req.body.description,
-        price: req.body.price
-      })
-      .then(item => res.status(201).json(item))
-      .catch(function (err) {
+    // Dumpproof
+    verify.verifyPrice(req.body.price);
+
+    Accounts.find({ where: {id: req.body.merchant} })
+      .then(function(user) {
+        if (!user) {
+          throw new AddItemException('Merchant:'+req.body.merchant+' do not exist');
+        }else if(user.type != "MERCHANT"){
+          throw new AddItemException('User:'+req.body.merchant+' is not a merchant');
+        }else{
+          return Items
+            .create({
+              merchant:    req.body.merchant,
+              shortcut:    req.body.shortcut,
+              name:        req.body.name,
+              description: req.body.description,
+              price:       req.body.price
+            })
+            .then(item => res.status(201).json(item))
+            .catch(function(err){
+              next(err);
+            });
+        }
+      }).catch(function(err){
         next(err);
       });
   }
-
 };
