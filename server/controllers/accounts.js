@@ -29,7 +29,23 @@ module.exports = {
       next(err);
     });
   },
+  
+  login: function(req, res, next){
+    var username = req.body.username,
+      password = req.body.password;
 
+      Accounts.findOne({ where: { username: username } }).then(function (user) {
+      if (!user) {
+        res.redirect('/login');
+      }else if(!user.validPassword(password)) {
+        res.redirect('/login');
+      }else{
+        req.session.user = user.dataValues;
+        res.redirect('/dashboard');
+      }
+    });
+  },
+  
   list: function(req, res, next) {
     return Accounts
     .findAll({})

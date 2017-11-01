@@ -1,4 +1,5 @@
 'use strict';
+var bcrypt = require('bcrypt');
 module.exports = function(sequelize, DataTypes) {
   var Accounts = sequelize.define('Accounts', {
       id: {
@@ -6,11 +7,21 @@ module.exports = function(sequelize, DataTypes) {
         primaryKey: true,
         defaultValue: DataTypes.UUIDV4
       },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
       name:   DataTypes.STRING,
       amount: DataTypes.DECIMAL,
       type:   DataTypes.STRING,
       card:   DataTypes.UUID
     },{
+      hooks: {
+        beforeCreate: (account) => {
+          const salt = bcrypt.genSaltSync();
+          account.password = bcrypt.hashSync(account.password, salt);
+        }
+      },
       createdAt: false,
       updatedAt: false,
 
@@ -21,5 +32,8 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   );
+  Accounts.prototype.validPassword= function(password) {
+    return bcrypt.compareSync(password, this.password);
+  };
   return Accounts;
 };
