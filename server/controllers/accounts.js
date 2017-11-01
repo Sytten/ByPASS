@@ -29,6 +29,30 @@ module.exports = {
       next(err);
     });
   },
+  login: function(req, res, next) {
+    return Accounts
+      .findOne({where: {name: req.body.username}})
+      .then(account => res.status(200).json({id: account.id}))
+      .catch(() => next(new InvalidAccount(req.body.username)));
+  },
+  
+  refill: function(req, res, next) {
+    return Accounts
+      .findById(req.params.id, {rejectOnEmpty: true})
+      .then(account => {
+        var toAdd = req.body.ammount;
+      
+        var newValue = toAdd + account.amount;
+        console.log("New Ammount = "+ newValue);
+        // Check if record exists in db
+        if (user) {
+          account.updateAttributes({
+            amount: newValue
+          })
+          .success(res.status(200).json({id: account.id}))
+        }
+      }).catch(() => next(new InvalidAccount(req.body.id)));
+   },
 
   list: function(req, res, next) {
     return Accounts
