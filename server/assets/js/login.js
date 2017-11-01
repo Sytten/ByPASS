@@ -13,10 +13,11 @@ $(function() {
 
   				// redirect to the correct web view
   				if (data.type == "CUSTOMER")
-		    		$.redirect('/app/student');
+		    		$.redirect('/app/student', null, "GET");
 		    	else
-		    		$.redirect('/app/merchant');
+		    		$.redirect('/app/merchant', null, "GET");
 		  	})
+		  	
 		  	// login failed
 		  	.fail(function(response) {
 		  		var error = response.responseJSON;

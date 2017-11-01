@@ -18,7 +18,6 @@ router.get('/student', studentController.transactions);
 	router.post('/student/transactions_table', studentController.transactions_table);
 	router.post('/student/total', studentController.total);
 
-
 // merchant products page 
 router.get('/merchant/products', merchantController.products);
 

@@ -19,6 +19,4 @@ $(function() {
       console.log(data)
       $("#total").text(data.total.toFixed(2) + "$");
     });
-
-
 });

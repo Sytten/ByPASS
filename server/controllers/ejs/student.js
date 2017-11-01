@@ -1,5 +1,6 @@
 var Accounts = require('../../models').Accounts
 var InvalidAccount = require('../../exceptions/invalidAccount')
+var Transactions = require('../../models').Transactions
 
 module.exports = {
 	transactions: function(req, res) {
@@ -7,7 +8,15 @@ module.exports = {
 	},
 
 	transactions_table: function(req, res) {
-		res.render('student/parts/transactions_table');
+		Transactions.findAll({ 
+			where: { 
+				client: req.body.id
+          	}
+        }).then(transactions => {
+      		res.render('student/parts/transactions_table', {
+				transactions: transactions
+			});
+      	}).catch(() => next(new InvalidAccount(req.body.id)));
 	},
 
 	total: function(req, res) {
