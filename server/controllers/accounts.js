@@ -38,20 +38,28 @@ module.exports = {
   
   refill: function(req, res, next) {
     return Accounts
-      .findById(req.params.id, {rejectOnEmpty: true})
+      .findById(req.body.id, {rejectOnEmpty: true})
       .then(account => {
-        var toAdd = req.body.ammount;
-      
-        var newValue = toAdd + account.amount;
-        console.log("New Ammount = "+ newValue);
-        // Check if record exists in db
-        if (user) {
+        var toAdd = req.body.amount;
+        account.addAmmount(toAdd);
+        var newValue =  account.getamount()
+    
+        // Enough found ?
+        if(newValue < 0){
+          account.addAmmount(toAdd*-1);
+          res.status(201).json({status: "Not enough money in the bank",
+                                ammount: account.amount
+                               });
+        }else if (account) {
           account.updateAttributes({
             amount: newValue
           })
-          .success(res.status(200).json({id: account.id}))
+          res.status(201).json({status: "Succes",
+                                ammount: account.amount
+                               });
         }
-      }).catch(() => next(new InvalidAccount(req.body.id)));
+      })
+      .catch(() => next(new InvalidAccount(req.body.id)));
    },
 
   list: function(req, res, next) {
