@@ -1,9 +1,10 @@
 
 module.exports = {
 	transactions: function(req, res) {
-		var user_id = req.body.id
-	    res.render('student/transactions', {
-	    	user_id: user_id
-	    });
+	    res.render('student/transactions');
+	},
+
+	transactions_table: function(req, res) {
+		res.render('student/parts/transactions_table');
 	},
 }

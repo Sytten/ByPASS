@@ -13,7 +13,10 @@ router.get('/', function(req, res) {
 router.get('/login', loginController.login);
 
 // student transactions page 
-router.post('/student', studentController.transactions);
+router.get('/student', studentController.transactions);
+	// student parts
+	router.post('/student/transactions_table', studentController.transactions_table);
+
 
 // merchant products page 
 router.get('/merchant/products', merchantController.products);
