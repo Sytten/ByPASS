@@ -40,19 +40,21 @@ module.exports = {
     return Accounts
       .findById(req.body.id, {rejectOnEmpty: true})
       .then(account => {
-        console.log("Acount founded " +account);
         var toAdd = req.body.amount;
-        console.log("Current Amount " + account.getamount());
-        console.log("Amount To add"   + toAdd);
         account.addAmmount(toAdd);
         var newValue =  account.getamount()
-        console.log("New Ammount = "+ newValue);
-        // Check if record exists in db
-        if (account) {
+    
+        // Enough found ?
+        if(newValue < 0){
+          account.addAmmount(toAdd*-1);
+          res.status(201).json({status: "Not enough money in the bank",
+                                ammount: account.amount
+                               });
+        }else if (account) {
           account.updateAttributes({
             amount: newValue
           })
-          res.status(201).json({id: account.id,
+          res.status(201).json({status: "Succes",
                                 ammount: account.amount
                                });
         }
