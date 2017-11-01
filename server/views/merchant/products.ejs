@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>ByPASS - Produits</title>
+  <meta name="description" content="Payment network for local communities">
+  <meta name="author" content="ByPASS">
+
+  <link rel="stylesheet" href="/assets/css/base.css">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+	<h1>Produits - <%= merchant_id %></h1>
+  <hr/>
+  <section class="center">
+    <table class="base_table">
+      <tr>
+        <th>Produits</th>
+        <th>Prix</th>
+        <th>Action</th>
+      </tr>
+
+      <% for(var i = 0 ; i< 5; i++) { %>
+        <tr>
+          <td>Fin du monde</td>
+          <td>2.50$</td>
+          <td><a href=''>supprimer</a></td>
+        </tr>
+      <% } %>  
+    </table>
+    
+  </section>
+  <section>
+    <div class="add_box">
+      <button id="add_button" class="button_flat b_small">Ajouter</button>
+    </div>
+  </section>
+</body>
+</html>

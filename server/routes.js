@@ -5,6 +5,7 @@ var express = require('express');
 var router = express.Router();
 
 // Accounts
+router.post('/accounts/login', accounts.login);
 router.get('/accounts/:id', accounts.getById);
 router.get('/accounts', accounts.list);
 router.post('/accounts', accounts.create);
