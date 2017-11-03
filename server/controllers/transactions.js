@@ -15,7 +15,6 @@ async function isItemExist(id_) {
      Items.count({ where: {id: id_} })
      .then(count => {
        if (count == 0) {
-         console.log("Item not exist")
          resolve(false);
        }else{
          resolve(true);
@@ -27,7 +26,6 @@ async function isItemExist(id_) {
 
 async function checkAllItems(items_){
   for(let i=0; i< items_.length ; i++){
-    console.log("Get result")
     let result = await isItemExist(items_[i]);
     if(!result){
         console.log("Item not exist result")
@@ -94,12 +92,11 @@ module.exports = {
                 }
 
                 // All look fine... add it to DB
-                var uuidbackup = [];
+                var uuidbackup = uuidv4();
                 for(var i=0; i< items_.length ; i++){
-                  uuidbackup.push(uuidv4());
                   Transactions
                   .create({
-                    id:       uuidbackup[i],
+                    id:       uuidbackup,
                     merchant: merchant_,
                     client:   client_,
                     item:     items_[i],
