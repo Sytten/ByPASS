@@ -73,9 +73,9 @@ module.exports = {
 
   login: function(req, res, next) {
     return Accounts
-      .findOne({where: {name: req.body.username}})
-      .then(account => res.status(200).json({id: account.id}))
-      .catch(() => next(new InvalidAccount(req.body.username)));
+      .findOne({where: {name: req.body.name}})
+      .then(account => res.status(200).json({id: account.id, type: account.type}))
+      .catch(() => next(new InvalidAccount(req.body.name)));
   },
 
   getById: function(req, res, next) {
