@@ -14,11 +14,12 @@ router.post('/accounts/refill', accounts.refill);
 
 // Items
 router.post('/items', items.create);
-router.get('/accounts/:id/items', items.list);
+router.get('/items/:id', items.list); // To do
+router.get('/items', items.listAll);
 
 // Transactions
 router.post('/transactions', transactions.create)
-router.get('/accounts/:id/transactions', transactions.list)
+router.get('/accounts/transactions/:id', transactions.list)
 
 // Zigbee
 router.post('/zigbee/bridge', zigbee.bridge);
