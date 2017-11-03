@@ -1,3 +1,5 @@
+ <!doctype html>
+ <%= JSON.stringify(transactions, null, 4) %>
  <table class="base_table">
   <tr>
     <th>Article</th>
@@ -6,12 +8,12 @@
     <th>Date</th>
   </tr>
 
-  <% for(var i = 0 ; i< 5; i++) { %>
+  <% for(var i = 0 ; i< transactions.length; i++) { %>
     <tr>
-      <td>Dépôt</td>
-      <td>50$</td>
-      <td>5@8 Génie</td>
-      <td>4 octobre 2014</td>
+      <td><%= transactions[i].article %></td>
+      <td><%= transactions[i].montant %></td>
+      <td><%= transactions[i].destinataire %></td>
+      <td><%= transactions[i].date %></td>
     </tr>
   <% } %>
 </table>

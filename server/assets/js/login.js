@@ -15,7 +15,7 @@ $(function() {
   				if (data.type == "CUSTOMER")
 		    		$.redirect('/app/student', null, "GET");
 		    	else
-		    		$.redirect('/app/merchant', null, "GET");
+		    		$.redirect('/app/merchant/sales', null, "GET");
 		  	})
 		  	
 		  	// login failed

@@ -13,8 +13,19 @@ module.exports = {
 				client: req.body.id
           	}
         }).then(transactions => {
+        	var student_transactions = []
+        	transactions.forEach(transaction => {
+        		var itemId = transaction.item;
+        		var merchartId = transaction.merchant;
+        		var date = transaction.createdAt;
+        		var price = transaction.price;
+
+        		// add student transaction to his array of transaction
+        		var student_transaction = {article: itemId, montant: price, destinataire: merchartId, date: date};
+        		student_transactions.push(student_transaction);
+        	}); 
       		res.render('student/parts/transactions_table', {
-				transactions: transactions
+				transactions: student_transactions
 			});
       	}).catch(() => next(new InvalidAccount(req.body.id)));
 	},
