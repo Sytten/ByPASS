@@ -17,6 +17,15 @@ module.exports = {
       });
   },
 
+  listAll:function(req, res, next) {
+    return Items.
+      findAll()
+      .then(items => res.status(200).json(items))
+      .catch(function(err){
+        next(err);
+      });
+  },
+
   create: function(req, res, next) {
     verify.verifyParameter(req.body.merchant, 'merchant');
     verify.verifyParameter(req.body.shortcut, 'shortcut');
@@ -49,5 +58,6 @@ module.exports = {
       }).catch(function(err){
         next(err);
       });
-  }
+  },
+
 };
