@@ -1,3 +1,28 @@
+## Configuration
+The backend needs access to a postgres database to work properly. To configure it, you will need to create a **config** folder. Then create a **config.json** file inside the config folder.
+Please insert the following config (with your credentials) inside:
+
+```
+{
+  "development": {
+    "username": "root",
+    "password": "password",
+    "database": "bypass_development",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
+```
+
+## Run
+- Install dependencies with [npm](https://www.npmjs.com/).
+- Start the database `docker-compose up -d`
+- Start the server using `node server.js`
+
+
+________
+# withoutdocker
+
 # API
 The backend uses:
 [NodeJs](https://nodejs.org/en/)
