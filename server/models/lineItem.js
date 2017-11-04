@@ -8,14 +8,12 @@ module.exports = function(sequelize, DataTypes) {
     },
     itemId:        DataTypes.UUID,
     quantity:      DataTypes.DOUBLE,
-    transactionId: DataTypes.UUID,
-  },{
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
+    TransactionId: DataTypes.UUID,
   });
+
+  LineItem.associate = function (models) {
+    LineItem.belongsTo(models.Item, { as: "item"})
+  }
 
   return LineItem;
 };
