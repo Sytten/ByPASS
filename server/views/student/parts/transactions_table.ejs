@@ -10,7 +10,7 @@
   <% for(var i = 0 ; i< transactions.length; i++) { %>
     <tr>
       <td><%= transactions[i].article %></td>
-      <td><%= transactions[i].montant %></td>
+      <td><%= transactions[i].montant.toFixed(2) %>$</td>
       <td><%= transactions[i].destinataire %></td>
       <td><%= transactions[i].date %></td>
     </tr>

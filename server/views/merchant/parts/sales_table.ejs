@@ -1,0 +1,21 @@
+<!doctype html>
+
+<table class="base_table">
+  <tr>
+    <th>Article</th>
+    <th>Unités vendues</th>
+    <th>Somme</th>
+    <th>Client</th> 
+    <th>Date</th>
+  </tr>
+
+  <% for(var i = 0 ; i< transactions.length; i++) { %>
+    <tr>
+      <td><%= transactions[i].article %></td>
+      <td><%= transactions[i].units %></td>
+      <td><%= transactions[i].somme.toFixed(2) %>$</td>
+      <td><%= transactions[i].client %></td>
+      <td><%= transactions[i].date %></td>
+    </tr>
+  <% } %>  
+</table>

@@ -16,32 +16,21 @@
 </head>
 
 <body>
-	<h1>Ventes - <%= merchant_id %></h1>
+	<h1>Ventes <span id="cip"></span></h1>
   <hr/>
   <section class="center">
-    <table class="base_table">
-      <tr>
-        <th>Article</th>
-        <th>Unités vendues</th>
-        <th>Somme</th>
-        <th>Date</th>
-      </tr>
-
-      <% for(var i = 0 ; i< 5; i++) { %>
-        <tr>
-          <td>Fin du monde</td>
-          <td>300</td>
-          <td>750$</td>
-          <td>5 octobre 2017</td>
-        </tr>
-      <% } %>  
-    </table>
-    
+    <span id="transactions_table"></span>
   </section>
+
   <section>
     <div class="black_box">
-      Total : 3750$
+      solde : <span id="total"></span>
     </div>
   </section>
+
+  <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery.redirect.js"></script>
+  <script type="text/javascript" src="/assets/js/cookies.js"></script>
+  <script type="text/javascript" src="/assets/js/merchant_sales.js"></script>
 </body>
 </html>

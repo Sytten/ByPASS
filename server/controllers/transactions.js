@@ -26,7 +26,7 @@ module.exports = {
     verify.verifyParameter(req.body.merchant, 'merchant');
     verify.verifyParameter(req.body.client, 'client');
 
-    // todo handle when lineItem.itemId does not exists
+    // TODO handle when lineItem.itemId does not exists
 
     return Transaction
       .create({

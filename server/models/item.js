@@ -11,12 +11,7 @@ module.exports = function(sequelize, DataTypes) {
     name:        DataTypes.STRING,
     description: DataTypes.TEXT,
     price:       DataTypes.DOUBLE.UNSIGNED
-  },{
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+
   return Item;
 };
