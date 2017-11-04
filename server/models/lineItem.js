@@ -1,22 +1,22 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var Items = sequelize.define('Items', {
+  var LineItem = sequelize.define('LineItem', {
     id: {
       type: DataTypes.UUID,
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4
     },
-    merchant:    DataTypes.UUID,
-    shortcut:    DataTypes.INTEGER,
-    name:        DataTypes.STRING,
-    description: DataTypes.TEXT,
-    price:       DataTypes.DOUBLE.UNSIGNED
+    itemId:        DataTypes.UUID,
+    quantity:      DataTypes.DOUBLE,
+    transactionId: DataTypes.UUID,
   },{
     classMethods: {
       associate: function(models) {
         // associations can be defined here
+        LineItem.hasOne(models.Item)
       }
     }
   });
-  return Items;
+
+  return LineItem;
 };

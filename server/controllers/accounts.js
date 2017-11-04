@@ -1,19 +1,24 @@
-var Accounts = require('../models').Accounts
+// models
+var Account = require('../models').Account
+
+// verifiers
+var verify = require('../helpers/parameters');
+
+// exceptions
 var InvalidAccount = require('../exceptions/invalidAccount')
 var UserExist = require('../exceptions/userExist')
-var verify = require('../helpers/parameters');
 
 module.exports = {
   create: function(req, res, next) {
     verify.verifyParameter(req.body.name, 'name');
     verify.verifyAccountTypeParameter(req.body.type, 'type');
 
-    Accounts.count({ where: {name: req.body.name} })
+    Account.count({ where: {name: req.body.name} })
       .then(count => {
         if (count != 0) {
           throw new UserExist('Username:'+req.body.name+' alreay exist');
         }else{
-         return Accounts
+         return Account
              .create({
              name: req.body.name,
              type: req.body.type,
@@ -30,14 +35,14 @@ module.exports = {
     });
   },
   login: function(req, res, next) {
-    return Accounts
+    return Account
       .findOne({where: {name: req.body.username}})
       .then(account => res.status(200).json({id: account.id}))
       .catch(() => next(new InvalidAccount(req.body.username)));
   },
   
   refill: function(req, res, next) {
-    return Accounts
+    return Account
       .findById(req.body.id, {rejectOnEmpty: true})
       .then(account => {
         var toAdd = req.body.amount;
@@ -63,7 +68,7 @@ module.exports = {
    },
 
   list: function(req, res, next) {
-    return Accounts
+    return Account
     .findAll({})
     .then(accounts => res.status(200).json(accounts))
     .catch(function (err) {
@@ -72,14 +77,14 @@ module.exports = {
   },
 
   login: function(req, res, next) {
-    return Accounts
+    return Account
       .findOne({where: {name: req.body.name}})
       .then(account => res.status(200).json({id: account.id, type: account.type}))
       .catch(() => next(new InvalidAccount(req.body.name)));
   },
 
   getById: function(req, res, next) {
-    return Accounts
+    return Account
     .findById(req.params.id, {rejectOnEmpty: true})
     .then(account => res.status(200).json(account))
     .catch(() => next(new InvalidAccount(req.params.id)));

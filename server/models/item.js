@@ -1,25 +1,22 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var Transactions = sequelize.define('Transactions', {
+  var Item = sequelize.define('Item', {
     id: {
       type: DataTypes.UUID,
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4
     },
-    client:   DataTypes.UUID,
-    merchant: DataTypes.UUID,
-    item:     DataTypes.UUID,
-    quantity: DataTypes.INTEGER.UNSIGNED,
-    price:    DataTypes.DOUBLE.UNSIGNED
-  }, {
-    updatedAt: false,
-
+    merchant:    DataTypes.UUID,
+    shortcut:    DataTypes.INTEGER,
+    name:        DataTypes.STRING,
+    description: DataTypes.TEXT,
+    price:       DataTypes.DOUBLE.UNSIGNED
+  },{
     classMethods: {
       associate: function(models) {
         // associations can be defined here
       }
     }
   });
-  
-  return Transactions;
+  return Item;
 };

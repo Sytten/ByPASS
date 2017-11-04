@@ -1,4 +1,4 @@
-var Accounts = require('../models').Accounts
+var Account = require('../models').Account
 
 module.exports = {
   bridge: function(req, res, next) {

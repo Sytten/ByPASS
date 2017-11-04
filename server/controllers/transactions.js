@@ -1,9 +1,9 @@
-var Transactions = require('../models').Transactions
+var Transaction = require('../models').Transaction
 var verify = require('../helpers/parameters');
 
 module.exports = {
   list: function(req, res, next) {
-    return Transactions.
+    return Transaction.
       findAll({
         where: {
           $or: {
@@ -24,13 +24,10 @@ module.exports = {
 
     //TODO: Change to accomodate multiple items and test the balance before
 
-    return Transactions
+    return Transaction
       .create({
         merchant: req.body.merchant,
-        client: req.body.client,
-        item: req.body.item,
-        quantity: req.body.quantity,
-        price: req.body.price
+        client: req.body.client
       })
       .then(transaction => res.status(201).json(transaction))
       .catch(function (err) {
