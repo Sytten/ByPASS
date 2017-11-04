@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   LineItem.associate = function (models) {
-    LineItem.belongsTo(models.Item, { as: "item"})
+    LineItem.belongsTo(models.Item, { foreignKey: "itemId", targetKey: "id", as: "item"})
   }
 
   return LineItem;

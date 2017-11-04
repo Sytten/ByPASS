@@ -1,7 +1,7 @@
-module.exports = function InvalidTransaction(account) {
+module.exports = function InvalidTransaction(account, error) {
   Error.captureStackTrace(this, this.constructor);
   this.name = this.constructor.name;
-  this.message = `Transaction with client = ${account} doesn't exists`;
+  this.message = `Error with transaction : [client = ${account}]\nCause : ` + error.message;
   this.status = 404;
 };
 

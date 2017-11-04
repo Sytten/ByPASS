@@ -1,8 +1,9 @@
 // models
 var Account = require('../../models').Account
-var Transaction = require('../../models').Transaction
-var LineItem = require('../../models').LineItem
-var Item = require('../../models').Item
+
+// helpers
+var transaction_helper = require('../../helpers/transaction_helper')
+
 // exceptions
 var InvalidTransaction = require('../../exceptions/invalidTransaction')
 
@@ -16,44 +17,23 @@ module.exports = {
 	},
 
 	transactions_table: function(req, res, next) {
-		Transaction.findAll({ 
-			where: { 
-				client: req.body.id
-          	},
-          	include: [{
-          		model: LineItem,
-          		as: "lineItems",
-          		include: [{
-          			model: Item,
-          			as: "item",
-          		}]
-          	},
-          	{
-          		model: Account,
-          		as: "marchand"
-          	}
-          	],
-          	raw: true,
-        }).then(transactions => {
-        	var student_transactions = []
+    transaction_helper.flatTransactionsById(req.body.id).then(transactions => {
+          // format transactions
+          var formatted_transactions = transactions.map(function (transaction) {
+              return {
+                  article: transaction['lineItems.item.name'],
+                  montant: transaction['lineItems.quantity'] * transaction['lineItems.item.price'],
+                  destinataire: transaction['marchand.name'],
+                  date: dateFormat(transaction.createdAt, "yyyy/mm/dd"),
+              };
+          });
 
-        	transactions.forEach(transaction => {
-    			console.log(transaction)
-    			var name = transaction['lineItems.item.name'];
-    			var montant = transaction['lineItems.quantity'] * transaction['lineItems.item.price'];
-    			var destinataire = transaction['marchand.name'];
-    			var date = transaction.createdAt;
-
-				var formatedDate = dateFormat(date, "yyyy/mm/dd");
-
-    			var student_transaction = {article: name, montant: montant, destinataire: destinataire, date: formatedDate};
-    			student_transactions.push(student_transaction);
-        	});
-
-    		res.render('student/parts/transactions_table', {
-				transactions: student_transactions
-			});
-      	})
+          // render transaction table of a student
+    		  res.render('student/parts/transactions_table', {
+				    transactions: formatted_transactions
+			    });
+    })
+    .catch((error) => next(new InvalidTransaction(req.body.id, error)));
 	},
 
 	total: function(req, res, next) {

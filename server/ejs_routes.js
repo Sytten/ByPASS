@@ -23,5 +23,8 @@ router.get('/merchant/products', merchantController.products);
 
 // merchant sales page 
 router.get('/merchant/sales', merchantController.sales);
+	// merchant sales parts
+	router.post('/merchant/sales/transactions', merchantController.sales_transactions);
+	router.post('/merchant/sales/total', merchantController.sales_total);
 
 module.exports = router;

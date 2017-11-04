@@ -13,15 +13,9 @@ module.exports = function(sequelize, DataTypes) {
     },{
       createdAt: false,
       updatedAt: false,
-
-      classMethods: {
-        associate: function(models) {
-          // associations can be defined here
-        }
-      }
     }
   );
-  Account.prototype.getamount= function() {
+  Account.prototype.getamount = function() {
     return this.amount;
   };
   Account.prototype.addAmmount= function(toAdd) {
