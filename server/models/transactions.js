@@ -9,8 +9,7 @@ module.exports = function(sequelize, DataTypes) {
     client:   DataTypes.UUID,
     merchant: DataTypes.UUID,
     item:     DataTypes.UUID,
-    quantity: DataTypes.INTEGER.UNSIGNED,
-    price:    DataTypes.DOUBLE.UNSIGNED
+    quantity: DataTypes.INTEGER.UNSIGNED
   }, {
     updatedAt: false,
 

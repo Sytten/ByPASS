@@ -25,7 +25,7 @@ module.exports = function(sequelize, DataTypes) {
     return this.amount;
   };
   Accounts.prototype.addAmmount= function(toAdd) {
-    this.amount = this.amount + toAdd;
+    this.amount = this.amount+toAdd;
   };
   return Accounts;
 };
