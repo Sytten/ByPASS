@@ -1,4 +1,8 @@
+// models
 var Transaction = require('../models').Transaction
+var LineItem = require('../models').LineItem
+
+// verifiers
 var verify = require('../helpers/parameters');
 
 module.exports = {
@@ -22,12 +26,15 @@ module.exports = {
     verify.verifyParameter(req.body.merchant, 'merchant');
     verify.verifyParameter(req.body.client, 'client');
 
-    //TODO: Change to accomodate multiple items and test the balance before
+    // todo handle when lineItem.itemId does not exists
 
     return Transaction
       .create({
         merchant: req.body.merchant,
-        client: req.body.client
+        client: req.body.client,
+        lineItems: req.body.lineItems,
+      }, {
+        include: [ {model: LineItem, as: "lineItems"} ]
       })
       .then(transaction => res.status(201).json(transaction))
       .catch(function (err) {

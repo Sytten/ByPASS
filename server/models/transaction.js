@@ -10,14 +10,10 @@ module.exports = function(sequelize, DataTypes) {
     merchant: DataTypes.UUID
   }, {
     updatedAt: false,
-
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-        Transaction.hasMany(models.LineItem)
-      }
-    }
   });
-  
+
+  Transaction.associate = function (models) {
+    Transaction.hasMany(models.LineItem, { as: "lineItems"})
+  }
   return Transaction;
 };
