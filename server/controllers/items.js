@@ -1,11 +1,16 @@
-var Items = require('../models').Items
-var Accounts = require('../models').Accounts
+// models
+var Item = require('../models').Item
+var Account = require('../models').Account
+
+// verifiers
 var verify = require('../helpers/parameters');
+
+// exceptions
 var AddItemException = require('../exceptions/addItemException')
 
 module.exports = {
   list: function(req, res, next) {
-    return Items.
+    return Item.
       findAll({
         where: {
           merchant: req.params.id
@@ -22,18 +27,16 @@ module.exports = {
     verify.verifyParameter(req.body.shortcut, 'shortcut');
     verify.verifyParameter(req.body.description, 'description');
     verify.verifyParameter(req.body.price, 'price');
-
-    // Dumpproof
     verify.verifyPrice(req.body.price);
 
-    Accounts.find({ where: {id: req.body.merchant} })
+    Account.find({ where: {id: req.body.merchant} })
       .then(function(user) {
         if (!user) {
           throw new AddItemException('Merchant:'+req.body.merchant+' do not exist');
         }else if(user.type != "MERCHANT"){
           throw new AddItemException('User:'+req.body.merchant+' is not a merchant');
         }else{
-          return Items
+          return Item
             .create({
               merchant:    req.body.merchant,
               shortcut:    req.body.shortcut,

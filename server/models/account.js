@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var Accounts = sequelize.define('Accounts', {
+  var Account = sequelize.define('Account', {
       id: {
         type: DataTypes.UUID,
         primaryKey: true,
@@ -21,11 +21,11 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   );
-  Accounts.prototype.getamount= function() {
+  Account.prototype.getamount= function() {
     return this.amount;
   };
-  Accounts.prototype.addAmmount= function(toAdd) {
+  Account.prototype.addAmmount= function(toAdd) {
     this.amount = this.amount + toAdd;
   };
-  return Accounts;
+  return Account;
 };
