@@ -20,6 +20,7 @@ router.get('/student', studentController.transactions);
 
 // merchant products page 
 router.get('/merchant/products', merchantController.products);
+	router.post('/merchant/products/table', merchantController.products_table)
 
 // merchant sales page 
 router.get('/merchant/sales', merchantController.sales);

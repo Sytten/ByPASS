@@ -16,30 +16,22 @@
 </head>
 
 <body>
-	<h1>Produits - <%= merchant_id %></h1>
+	<h1>Produits <span id="cip"></span></h1>
+  <a href='sales'>Sales</a> - <a href='../login'>Login</a>
   <hr/>
   <section class="center">
-    <table class="base_table">
-      <tr>
-        <th>Produits</th>
-        <th>Prix</th>
-        <th>Action</th>
-      </tr>
-
-      <% for(var i = 0 ; i< 5; i++) { %>
-        <tr>
-          <td>Fin du monde</td>
-          <td>2.50$</td>
-          <td><a href=''>supprimer</a></td>
-        </tr>
-      <% } %>  
-    </table>
-    
+    <span id="products_table"></span>
   </section>
+  
   <section>
     <div class="add_box">
       <button id="add_button" class="button_flat b_small">Ajouter</button>
     </div>
   </section>
+
+  <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery.redirect.js"></script>
+  <script type="text/javascript" src="/assets/js/cookies.js"></script>
+  <script type="text/javascript" src="/assets/js/merchant_products.js"></script>
 </body>
 </html>

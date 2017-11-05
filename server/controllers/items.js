@@ -22,7 +22,20 @@ module.exports = {
       });
   },
 
+  delete: function(req, res, next) {
+    return Item.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(affected => {
+      res.redirect('/app/merchant/products')
+    }).catch(error => {
+      next(error)
+    })
+  },
+
   create: function(req, res, next) {
+    verify.verifyParameter(req.body.name, 'name');
     verify.verifyParameter(req.body.merchant, 'merchant');
     verify.verifyParameter(req.body.shortcut, 'shortcut');
     verify.verifyParameter(req.body.description, 'description');

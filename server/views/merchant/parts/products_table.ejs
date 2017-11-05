@@ -1,0 +1,28 @@
+<!doctype html>
+<table class="base_table">
+  <tr>
+    <th>Produits</th>
+    <th>Description</th>
+    <th>Prix</th>
+    <th>Shortcut</th>
+    <th>Action</th>
+  </tr>
+
+  <% for(var i = 0 ; i < items.length; i++) { %>
+    <tr>
+      <td><%= items[i].name %></td>
+      <td><%= items[i].description %></td>
+      <td><%= items[i].price.toFixed(2) %>$</td>
+      <td><%= items[i].shortcut %></td>
+      <td><a href='/api/items/delete/<%= items[i].id %>'>supprimer</a></td>
+    </tr>
+  <% } %>  
+
+  <tr>
+      <td><input id="p_add_name" class="p_input" /></td>
+      <td><input id="p_add_desc" class="p_input" /></td>
+      <td><input id="p_add_price" class="p_input" /></td>
+      <td><input id="p_add_sc" class="p_input" /></td>
+      <td></td>
+    </tr>
+</table>

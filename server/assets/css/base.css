@@ -59,6 +59,19 @@
 		font-size: 18px;
 	}
 
+	.p_input {
+		outline: none;
+		border: 1px solid black;
+		width: 100px;
+
+		text-align: center;
+	}
+
+	.p_error {
+		border: 1px solid red;
+		color: red;
+	}
+
 	.button_flat {
 		outline: none;
 		background-color: #0073F3; /* Green */
