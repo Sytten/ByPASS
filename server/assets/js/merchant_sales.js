@@ -16,7 +16,6 @@ $(function() {
    // render total via ajax
   $.post("/app/merchant/sales/total", { id: id })
     .done(function(data) {
-      console.log(data)
       $("#total").text(data.total.toFixed(2) + "$");
     });
 });
