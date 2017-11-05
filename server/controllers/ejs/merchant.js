@@ -1,5 +1,6 @@
 // models
 var Account = require('../../models').Account
+var Item = require('../../models').Item
 
 // helpers
 var transaction_helper = require('../../helpers/transaction_helper')
@@ -17,6 +18,12 @@ module.exports = {
 	       merchant_id: merchant_id
 	    });
 	},
+
+  products_table: function(req, res, next) {
+    Item.findAll({where : { merchant: req.body.id }, raw: true}).then(items => {
+      res.render('merchant/parts/products_table', {items: items});
+    })
+  },
 
 	sales: function(req, res, next) {
 		var merchant_id = req.body.id
