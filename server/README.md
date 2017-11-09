@@ -65,6 +65,7 @@ npm install -g snyk
 
 ### running commands
 npm-check-updates -u
+npm update
 npm install
 nsp check
 snyk test

@@ -14,7 +14,7 @@ router.post('/accounts/refill', accounts.refill);
 
 // Items
 router.post('/items', items.create);
-router.get('/items/delete/:id', items.delete);
+router.get('/items/delete/:id',   items.delete);
 router.get('/accounts/:id/items', items.list);
 
 // Transactions

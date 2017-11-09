@@ -4,28 +4,28 @@ var loginController = require('./controllers/ejs/login')
 var studentController = require('./controllers/ejs/student')
 var merchantController = require('./controllers/ejs/merchant')
 
-// index page 
+// index page
 router.get('/', function(req, res) {
-    res.redirect('/app/login')
+  res.redirect('/app/login')
 });
 
-// login page 
+// login page
 router.get('/login', loginController.login);
 
-// student transactions page 
+// student transactions page
 router.get('/student', studentController.transactions);
-	// student parts
-	router.post('/student/transactions_table', studentController.transactions_table);
-	router.post('/student/total', studentController.total);
+// student parts
+router.post('/student/transactions_table', studentController.transactions_table);
+router.post('/student/total', studentController.total);
 
-// merchant products page 
+// merchant products page
 router.get('/merchant/products', merchantController.products);
-	router.post('/merchant/products/table', merchantController.products_table)
+router.post('/merchant/products/table', merchantController.products_table)
 
-// merchant sales page 
+// merchant sales page
 router.get('/merchant/sales', merchantController.sales);
-	// merchant sales parts
-	router.post('/merchant/sales/transactions', merchantController.sales_transactions);
-	router.post('/merchant/sales/total', merchantController.sales_total);
+// merchant sales parts
+router.post('/merchant/sales/transactions', merchantController.sales_transactions);
+router.post('/merchant/sales/total', merchantController.sales_total);
 
 module.exports = router;
