@@ -2,18 +2,115 @@
 
 \input{preambule.tex}
 \usepackage{comment}
+\setlength\parindent{0pt}
+\newcommand{\tofill}[1]{\emph{#1}}
 
 \begin{document}
 
 	\input{titlepage}
 	
-	\pagenumbering{roman}
-	\tableofcontents
-	\clearpage
-    
-    \pagenumbering{arabic}
+%	\pagenumbering{roman}
+%	\tableofcontents
+%	\clearpage
+%    
+%    \pagenumbering{arabic}
 
     \onehalfspacing
+    
+    {\centering \Large {\bfseries \uppercase{Contrat de Travail}} \\ \today \par} \vspace{2\baselineskip}
+    
+    % EMPLOYEUR
+    \begin{minipage}[t]{0.45\textwidth}
+    	\bfseries\uppercase{Entre :}
+    \end{minipage}%
+    \hfill%
+    \begin{minipage}[t]{0.45\textwidth}
+    	{\bfseries\uppercase{Nom de l'entreprise}}, personne morale dûment constituée en vertu de la Loi sur les compagnies partie 1A, ayant son siège social dans un paradis fiscal, représentée aux présentes par monsieur \tofill{Prénom Nom, poste du mandataire} dûment autorisé. \\ %TODO Entreprise/mandataire
+
+    	{\raggedleft (ci-après appelée : \og l'Employeur \fg{}) \par}    	
+    \end{minipage} \\ \vspace{\baselineskip}
+    
+    % EMPLOYE
+    \begin{minipage}[t]{0.45\textwidth}
+    	\bfseries\uppercase{Et :}
+    \end{minipage}%
+    \hfill%
+    \begin{minipage}[t]{0.45\textwidth}
+    	{\bfseries\uppercase{Monsieur} Prenom Nom}, domicilié et résidant au sous-sol de ses parents, Québec, Canada. \\ %TODO Employé
+    	
+    	{\raggedleft (ci-après appelé : \og l'Employé \fg{}) \par}
+    \end{minipage} \\ \vspace{\baselineskip}
+    
+    % PARTIES
+    \begin{minipage}[t]{0.45\textwidth}
+    \end{minipage}%
+    \hfill%
+    \begin{minipage}[t]{0.45\textwidth}
+    	(L'Employeur et l'Employé ci-après collectivement appelés \og les Parties \fg{})
+    \end{minipage} \\ \vspace{\baselineskip}
+    
+    \hrule
+    
+    \section*{Préambule}
+    
+    \paragraph{ATTENDU QUE} l'Employeur désire engager l'Employé à titre de développeur;
+    \paragraph{ATTENDU QUE} l'Employé désire accepter l'offre d'emploi de l'Employeur, après avoir pris connaissance des politiques et conditions d'emploi de celui-ci;
+    \paragraph{ATTENDU QUE} l'Employé a reçu en mains propres les politiques et conditions en vigueur de l'Employeur et consultera périodiquement la version la plus à jour disponible sur l'intranet.
+    \paragraph{ATTENDU QUE} les parties désirent confirmer leur entente par écrit; et
+    \paragraph{ATTENDU QUE} les parties sont en mesure d'exercer tout droit requis pour la conclusion et l'exécution de l'entente comprise dans ledit contrat.
+    
+    \pagebreak
+    
+    {\bfseries\footnotesize\uppercase{Conséquemment à ce qui précède, les parties conviennent de ce qui suit :}}
+    
+    \section{Préambule}
+    Le présent contrat inclut entièrement le préambule.
+    
+    \section{Objet}
+    	\subsection{Poste occupé}
+    	L'Employeur engage l'Employé à titre de développeur.
+    	\subsection{Principales fonctions et responsabilités}
+    	Non limitative et sujette à modification ultérieure sur préavis de l'Employeur, la description des principales fonctions et responsabilités de l'Employé est :
+    	
+    	\emph{Participer à la définition, au développement, tests, documentation, spécifications, et autres tâches relatives au développement de produits informatiques, ainsi que toute autre tâche qui lui serait attribuée par son supérieur immédiat.}
+    	
+    	\subsection{Supérieur immédiat}
+    	L'Employé est sous la responsabilité immédiate de \tofill{Prénom Nom, Poste}, ou toute autre personne pouvant être désignée par l'Employeur.
+    	
+    	\subsection{Lieu de travail}
+    	Le lieu de travail de l'Employé est situé au siège social de l'entreprise, ou à tout autre lieu requis pour l'exploitation efficace de l'entreprise par l'Employeur. Il n'est pas exclu que l'Employé doive parfois se travailler sur les lieux de travail des clients de l'entreprise.
+    
+    \section{Considération}
+    	\subsection{Salaire}
+    	En considération de l'exécution de son travail, l'Employé a droit à un salaire horaire de \SI{0}{\$}. Ledit salaire (diminué des déductions légales et contributives, s'il y a lieu) est payable à chaque deux semaines par chèque ou dépôt direct dans le compte de banque de l'Employé, au choix de l'Employeur.
+    	
+    	\subsection{Temps supplémentaire}
+    	Tout temps supplémentaire doit être autorisé par l'Employeur préalablement à l'exécution par l'Employé. À la demande de l'Employé, l'Employeur peut substituer un congé payé d'une durée équivalente aux heures supplémentaires effectuées au paiement desdites heures supplémentaires, selon les dispositions prévues par la loi.
+    	
+    	\subsection{Vacances}
+    	L'Employé a droit à \SI{4}{\%} de vacances payées annuellement. Les vacances ne sont ni monnayables ni cumulatives, et doivent être prises en tenant compte de l'ancienneté des autres employés et des besoins reliés à l'exploitation de l'entreprise par l'Employeur.
+    	
+    	\subsection{Congés fériés et payés}
+    	L'Employé a droit aux jours de congé férié et payé établis par la loi. L'employé peut reprendre tout jour férié survenu pendant ses vacances immédiatement à la fin de celles-ci ou le différer.
+    	
+    	\subsection{Autres congés}
+    	Les autres congés sont ceux établis par la loi ou ceux autorisés par le supérieur immédiat de l'Employé.
+    
+    \section{Dispositions particulières}
+    \lipsumC
+    \section{Dispositions générales}
+    \lipsumC
+    \section{Entrée en vigueur du contrat}
+    \lipsumC
+    \section{Durée du contrat}
+    \lipsumC
+    \section{Fin du contrat}
+    \lipsumC
+    \section{Reconnaissance des parties}
+    \lipsumC
+    
+    
+
     
     
         
