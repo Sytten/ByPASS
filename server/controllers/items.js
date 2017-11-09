@@ -1,11 +1,9 @@
 // models
 var Item = require('../models').Item
 var Account = require('../models').Account
+var LineItem = require('../models').LineItem
 
-// verifiers
 var verify = require('../helpers/parameters');
-
-// exceptions
 var AddItemException = require('../exceptions/addItemException')
 
 module.exports = {
@@ -22,16 +20,41 @@ module.exports = {
       });
   },
 
+
+
   delete: function(req, res, next) {
-    return Item.destroy({
-      where: {
-        id: req.params.id
+    // Verify if one tranasaction is contains in lineItem
+    verify.verifyParameter(req.params.id, 'Items id');
+    LineItem.findOne({where: {name: req.body.name}})
+    .then(count => {
+
+      // No transaction for this item
+      if (count == 0) {
+        return Item.destroy({
+          where: {
+            id: req.params.id
+          }
+        }).then(affected => {
+          res.redirect('/app/merchant/products')
+        }).catch(error => {
+          next(error)
+        })
+
+      // Transaction finded only merchant will be set off
+      }else{
+        Item.find({ where: {id: req.params.id} })
+        .then(function(item) {
+          item.updateAttributes({
+            merchant: "undefined"
+          })
+        }).then(result => res.status(201).json(result))
+        .catch(function (err) {
+          next(err);
+        });
       }
-    }).then(affected => {
-      res.redirect('/app/merchant/products')
-    }).catch(error => {
-      next(error)
-    })
+    }).catch(function (err) {
+      next(err);
+    });
   },
 
   create: function(req, res, next) {
