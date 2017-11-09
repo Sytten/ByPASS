@@ -1,8 +1,6 @@
 // models
 var Transaction = require('../models').Transaction
 var LineItem = require('../models').LineItem
-
-// verifiers
 var verify = require('../helpers/parameters');
 
 module.exports = {
@@ -27,11 +25,11 @@ module.exports = {
     var lineItems_ =req.body.lineItems;
     verify.verifyParameter(merchant_,   'merchant');
     verify.verifyParameter(client_,     'client');
-    verify.verifyParameter(LineItem,     'lineItems');
+    verify.verifyParameter(LineItem,    'lineItems');
 
       // Merchant Exist?
     Accounts.find({ where: {id: merchant_} })
-    .then(async function(merchant){
+    .then(function(merchant){
        if(!merchant){
          returnMessage = 'Client:'+ merchant_+' do not exist';
          throw new InvalidTransaction(returnMessage);
@@ -39,7 +37,7 @@ module.exports = {
 
        // Client Exist?
        Accounts.find({ where: {id: client_} })
-       .then(async function(client){
+       .then(function(client){
        if(!client){
           returnMessage = 'Client:'+client_+' do not exist';
           throw new InvalidTransaction(returnMessage);

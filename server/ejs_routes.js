@@ -11,6 +11,9 @@ router.get('/', function(req, res) {
 
 // login page
 router.get('/login', loginController.login);
+router.get('/register', function(req, res) {
+  res.render('register');
+});
 
 // student transactions page
 router.get('/student', studentController.transactions);
