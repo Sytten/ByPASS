@@ -2,7 +2,6 @@
 
 \input{preambule.tex}
 \usepackage{comment}
-\usepackage{multicol}
 \usepackage{pgfornament}
 \setlength\parindent{0pt}
 \newcommand{\tofill}[1]{\emph{#1}}
@@ -60,8 +59,6 @@
     \paragraph{ATTENDU QUE} l'Employé a reçu en mains propres les politiques et conditions en vigueur;
     \paragraph{ATTENDU QUE} les parties désirent confirmer leur entente par écrit; et
     \paragraph{ATTENDU QUE} les parties sont en mesure d'exercer avec compétence tout droit requis pour la mise en application de l'entente comprise dans ledit contrat.
-    
-    %TODO Check up "ATTENDU QUE"
     
     \vfill%
     %
@@ -173,18 +170,9 @@
 	    	\item 1 an de travail continu : 2 semaines de préavis
 	    	\item 5 ans de travail continu : 4 semaines de préavis
 	    	\item 10 ans de travail continu : 8 semaines de préavis
-	    \end{itemize}
+	    \end{itemize} \bigskip
 	    
-	    Aucune compensation n'est prévue si ces délais sont respectés. Les exceptions suivantes s'appliquent quant au respect du délai, auxquelles s'y rattache un simple avis sans possibilité de compensation : %
-	    %TODO faire rentrer ça dans une page
-	    \begin{multicols}{2}
-		    \begin{itemize}
-		    	\item Force majeure
-		    	\item Faillite de l'Employeur
-		    	\item Décès de l'Employé
-		    	\item Faute grave
-		    \end{itemize}
-		\end{multicols}
+	    Aucune compensation n'est prévue si ces délais sont respectés. Les exceptions suivantes s'appliquent quant au respect du délai, auxquelles s'y rattache un simple avis sans possibilité de compensation : force majeure, faillite de l'Employeur, décès de l'Employé, faute grave.
 			    	
     	\subsection{Démission}
 	    En cas de démission, l'Employé s'engage à remettre un avis de démission à l'Employeur dans les deux semaines précédant son départ.
@@ -193,16 +181,19 @@
     	Afin de protéger les intérêts légitimes de l'Employeur, l'Employé s'engage  à ne pas faire concurrence à l'Employeur ni à participer à une entreprise faisant concurrence directe à l'Employeur.
     	
     		\subsection{Territoire}
-    		L'engagement est valide pour le territoire suivant : un rayon de \SI{50}{km} à vol d'oiseau à partir du siège social de l'Employeur.
+    		L'engagement est valide pour le territoire suivant : un rayon de \SI{50}{km} à vol d'oiseau à partir du siège social de l'Employeur, au 2500 boulevard de l'Université, au local D4-2009, en la ville de Sherbrooke, province de Québec, J1K 2R1.
     		
     		\subsection{Durée}
     		L'engagement est valide durant la période de validité du contrat et durant les 6~mois suivant sa fin.
     		
     		\subsection{Domaine professionnel}
     		Le domaine visé par cet engagement est la conception de systèmes informatiques embarqués pour le paiement par carte RFID dans des réseaux d'organisations privées.
+    		
+    		\subsection{Défaut} Si l'Employé fait défaut par rapport au respect du présent engagement, il doit payer à l'Employeur tout dommage et intérêt que saurait lui être reconnue par l'Employeur. De plus, une somme pécunière minimale s'élevant à \SI{1000}{\$} par jour de violation du présent engagement sera réclamée à l'Employé.
     	
+    \pagebreak
    	\section{Signature des parties}
-   	En foi de quoi, les deux Parties ont signé aux lieux et date indiquées ci-dessous par un représentant dûment autorisé de chacune des Parties : \\
+   	En foi de quoi, les deux Parties ont signé aux lieux et dates indiqués ci-dessous par un représentant dûment autorisé de chacune des Parties : \\
     	
     \begin{minipage}[t]{0.45\textwidth}
     	{\bfseries Employeur} \\ \smallskip
@@ -229,6 +220,14 @@
     	\underline{\hspace{\textwidth}} \\
     	Date \\
     \end{minipage}
+    
+    \vfill
+    
+    {\centering%
+    \pgfornament[width=5cm]{70}%
+    \par}
+    
+    \vfill
     
     
     
