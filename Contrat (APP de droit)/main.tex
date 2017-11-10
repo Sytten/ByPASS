@@ -2,6 +2,8 @@
 
 \input{preambule.tex}
 \usepackage{comment}
+\usepackage{multicol}
+\usepackage{pgfornament}
 \setlength\parindent{0pt}
 \newcommand{\tofill}[1]{\emph{#1}}
 
@@ -23,9 +25,9 @@
     \begin{minipage}[t]{0.45\textwidth}
     	\bfseries\uppercase{Entre :}
     \end{minipage}%
-    \hfill%
+    \hfill\marginpar{\emph{(819) 943-0706}}%
     \begin{minipage}[t]{0.45\textwidth}
-    	{\bfseries\uppercase{Nom de l'entreprise}}, personne morale dûment constituée en vertu de la Loi sur les compagnies partie 1A, ayant son siège social dans un paradis fiscal, représentée aux présentes par monsieur \tofill{Prénom Nom, poste du mandataire} dûment autorisé. \\ %TODO Entreprise/mandataire
+    	{\bfseries\uppercase{ByPass Inc.}}, personne morale dûment constituée en vertu de la Loi sur les compagnies par action partie 1, ayant son siège social au 2500 boulevard de l'Université, au local D4-2009, en la ville de Sherbrooke, province de Québec, J1K 2R1, représentée aux présentes par monsieur {Julien Larochelle, chargé de projet} dûment autorisé. \\ 
 
     	{\raggedleft (ci-après appelée : \og l'Employeur \fg{}) \par}    	
     \end{minipage} \\ \vspace{\baselineskip}
@@ -34,9 +36,9 @@
     \begin{minipage}[t]{0.45\textwidth}
     	\bfseries\uppercase{Et :}
     \end{minipage}%
-    \hfill%
+    \hfill\marginpar{\emph{(819) 821-6660}}%
     \begin{minipage}[t]{0.45\textwidth}
-    	{\bfseries\uppercase{Monsieur} Prenom Nom}, domicilié et résidant au sous-sol de ses parents, Québec, Canada. \\ %TODO Employé
+    	{\bfseries\uppercase{Monsieur} Yvon Brulé}, domicilié et résidant au 1443 rue Gauvin, en la ville de Sherbrooke, province de Québec, J1K 2J2. \\
     	
     	{\raggedleft (ci-après appelé : \og l'Employé \fg{}) \par}
     \end{minipage} \\ \vspace{\baselineskip}
@@ -51,63 +53,144 @@
     
     \hrule
     
-    \section*{Préambule}
+    \section{Préambule et définitions}
     
-    \paragraph{ATTENDU QUE} l'Employeur désire engager l'Employé à titre de développeur;
+    \paragraph{ATTENDU QUE} l'Employeur désire engager l'Employé à titre d'ingénieur logiciel;
     \paragraph{ATTENDU QUE} l'Employé désire accepter l'offre d'emploi de l'Employeur, après avoir pris connaissance des politiques et conditions d'emploi de celui-ci;
-    \paragraph{ATTENDU QUE} l'Employé a reçu en mains propres les politiques et conditions en vigueur de l'Employeur et consultera périodiquement la version la plus à jour disponible sur l'intranet.
+    \paragraph{ATTENDU QUE} l'Employé a reçu en mains propres les politiques et conditions en vigueur;
     \paragraph{ATTENDU QUE} les parties désirent confirmer leur entente par écrit; et
-    \paragraph{ATTENDU QUE} les parties sont en mesure d'exercer tout droit requis pour la conclusion et l'exécution de l'entente comprise dans ledit contrat.
+    \paragraph{ATTENDU QUE} les parties sont en mesure d'exercer avec compétence tout droit requis pour la mise en application de l'entente comprise dans ledit contrat.
+    
+    %TODO Check up "ATTENDU QUE"
+    
+    \vfill%
+    %
+    {\centering%
+    \pgfornament[width=0.05\textwidth]{70}
+    \pgfornament[width=0.05\textwidth]{70}
+    \pgfornament[width=0.05\textwidth]{70}%
+    \par}%
+    %
+    \vfill
     
     \pagebreak
     
-    {\bfseries\footnotesize\uppercase{Conséquemment à ce qui précède, les parties conviennent de ce qui suit :}}
+%    {\bfseries\footnotesize\uppercase{Conséquemment à ce qui précède, les parties conviennent de ce qui suit :}}
     
-    \section{Préambule}
-    Le présent contrat inclut entièrement le préambule.
+%    \section{Préambule}
+%    Le présent contrat inclut entièrement le préambule.
     
-    \section{Objet}
-    	\subsection{Poste occupé}
-    	L'Employeur engage l'Employé à titre de développeur.
-    	\subsection{Principales fonctions et responsabilités}
-    	Non limitative et sujette à modification ultérieure sur préavis de l'Employeur, la description des principales fonctions et responsabilités de l'Employé est :
-    	
-    	\emph{Participer à la définition, au développement, tests, documentation, spécifications, et autres tâches relatives au développement de produits informatiques, ainsi que toute autre tâche qui lui serait attribuée par son supérieur immédiat.}
-    	
-    	\subsection{Supérieur immédiat}
-    	L'Employé est sous la responsabilité immédiate de \tofill{Prénom Nom, Poste}, ou toute autre personne pouvant être désignée par l'Employeur.
-    	
+    \section{Durée et lieu du travail}
+    
+        \subsection{Durée du contrat}
+	    Le présent contrat est à durée indéterminée.
+        	
     	\subsection{Lieu de travail}
-    	Le lieu de travail de l'Employé est situé au siège social de l'entreprise, ou à tout autre lieu requis pour l'exploitation efficace de l'entreprise par l'Employeur. Il n'est pas exclu que l'Employé doive parfois se travailler sur les lieux de travail des clients de l'entreprise.
+    	Le lieu de travail de l'Employé se trouve au siège social de l'entreprise.
+    	
+   \section{Fonctions et responsabilités du travailleur}
+   	L'Employeur engage l'Employé à titre d'ingénieur logiciel.
+
+    Sans s'y limiter et sujette à modification ultérieure sur préavis de l'Employeur, les principales fonctions et responsabilités de l'Employé sont définies ainsi :
+    	
+    	\emph{Participer à la conception, au développement, aux rencontres avec les clients, à la documentation, aux tests d'intégration et de performance, ainsi qu'à toute autre tâche relative au développement logiciel et matériel des produits et services de l'Employeur.}
     
-    \section{Considération}
+    \section{Rémunération}
     	\subsection{Salaire}
-    	En considération de l'exécution de son travail, l'Employé a droit à un salaire horaire de \SI{0}{\$}. Ledit salaire (diminué des déductions légales et contributives, s'il y a lieu) est payable à chaque deux semaines par chèque ou dépôt direct dans le compte de banque de l'Employé, au choix de l'Employeur.
+    	En contre-partie de l'exécution de son travail, l'Employé a droit à un salaire horaire de \SI{40}{\$}. Ce salaire est payable à chaque deux semaines par dépôt direct dans le compte de banque de l'Employé.
+    	
+    	\subsection{Assurance médicale}
+    	L'Employé peut sur demande souscrire au régime d'assurances médicale et dentaire offert par l'Employeur.
+    	
+    	\subsection{Primes}
+    	Aucune prime versée à l'Employé par l'Employeur n'est prévue dans le présent contrat.
+    	
+    	\subsection{Autres avantages sociaux}
+    	L'Employeur s'engage à payer l'abonnement annuel de l'Employé à la salle d'entraînement du centre sportif du campus principal de l'Université de Sherbrooke, situé au siège social, que l'Employé soit étudiant ou non.
+    	       	
+    	Tout matériel fourni demeure la propriété de l'Employeur.
+    
+    \section{Horaire de travail}
+    	\subsection{Journées et semaines de travail}
+    	L'Employé doit effectuer \SI{37,5}{h} de travail par semaine. L'horaire est variable, cependant l'Employé doit être présent au lieu de travail entre 9h00 a.m. et 15h00 p.m.
+    	
+    	La semaine de travail comprend 5~jours par semaine, du lundi au vendredi. Cette plage est cependant variable selon les fonctions de l'Employé ou les besoins de l'Employeur.
+    	
+    	\subsection{Périodes de repos}
+    	Une période de trente minutes pour le repas est allouée si la présence de l'Employé au lieu de travail dépasse 6~heures de travail continu, tel qu'établi par la loi.
     	
     	\subsection{Temps supplémentaire}
-    	Tout temps supplémentaire doit être autorisé par l'Employeur préalablement à l'exécution par l'Employé. À la demande de l'Employé, l'Employeur peut substituer un congé payé d'une durée équivalente aux heures supplémentaires effectuées au paiement desdites heures supplémentaires, selon les dispositions prévues par la loi.
+    	Tout temps supplémentaire doit être autorisé par l'Employeur préalablement à son exécution par l'Employé, et sera rémunéré en fonction des dispositions prévues par la loi.  	
     	
+    \section{Vacances et congés}
     	\subsection{Vacances}
-    	L'Employé a droit à \SI{4}{\%} de vacances payées annuellement. Les vacances ne sont ni monnayables ni cumulatives, et doivent être prises en tenant compte de l'ancienneté des autres employés et des besoins reliés à l'exploitation de l'entreprise par l'Employeur.
+    	L'Employé a droit à \SI{4}{\%} de vacances payées annuellement. Les vacances ne sont ni monnayables ni cumulatives, et doivent être prises en tenant compte de l'ancienneté des autres employés et des besoins reliés à l'exploitation de l'entreprise par l'Employeur. Un préavis d'un mois est requis.    	
     	
     	\subsection{Congés fériés et payés}
-    	L'Employé a droit aux jours de congé férié et payé établis par la loi. L'employé peut reprendre tout jour férié survenu pendant ses vacances immédiatement à la fin de celles-ci ou le différer.
+    	L'Employé a droit aux jours de congé férié et payé établis par la loi :
+    	
+    	\begin{itemize}
+    		\item le 1er janvier (jour de l’An);
+			\item le Vendredi saint ou le lundi de Pâques, au choix de l’employeur;
+			\item le lundi qui précède le 25 mai (Journée nationale des patriotes);
+			\item le 24 juin (fête nationale);
+			\item le 1er juillet. Si cette date tombe un dimanche : le 2 juillet (Fête du Canada);
+			\item le 1er lundi de septembre (fête du Travail);
+			\item le 2e lundi d’octobre (Action de grâces);
+			\item le 25 décembre (jour de Noël).
+    	\end{itemize}
+    	
+    	 L'employé peut reprendre tout jour férié survenu pendant ses vacances immédiatement à la fin de celles-ci ou le différer.
     	
     	\subsection{Autres congés}
-    	Les autres congés sont ceux établis par la loi ou ceux autorisés par le supérieur immédiat de l'Employé.
+    	Les autres congés sont ceux autorisés par l'Employeur.
+    	
+    	\subsection{Congés familiaux et de maladie}
+    	L'Employeur s'engage à respecter les congés familiaux et de maladie établis par la loi. Certaines exceptions s'appliquent pour les cas suivants :
+    	
+    	\begin{enumerate}
+    		\item Dans le cas du décès d'un membre de la famille immédiate, l'Employé a droit à 3~jours de congé payés aux frais de l'Employeur et à 5~jours supplémentaires à ses frais.
+    	
+   			\item Dans le cas de la naissance d'un enfant, l'Employé qui a travaillé depuis au moins 60~jours de façon continue pour l'Employeur a droit à 5~jours de congé payés par enfant aux frais de l'Employeur et à 5~jours supplémentaires à ses frais. Autrement, l'absence est à ses frais.
+
+   			\item Dans le cas de maladie, l'Employé a droit à 5~jours aux frais de l'Employeur par année.
+
+    	\end{enumerate}
+    	
+    \section{Réserve de propriété intellectuelle}
+    Dans le cadre de son travail, que ce soit ou non durant l'horaire de travail ou sur le lieu de travail, l'Employé pourrait être amené à créer, concevoir ou développer lui-même ou conjointement des procédés, logiciels, données, inventions, découvertes, diagrammes, plans, cahiers des charges, techniques, méthodes, algorithmes, dessins, protocoles,, savoir-faire (brevets, marques de commerce, droits d'auteur et dessins industriels).
+        L'Employé reconnaît et accepte que l'Employeur est propriétaire et titulaire de tout droit, titre et intérêt relatifs aux propriétés intellectuelles mentionnées ci-haut.
+        L'Employé cède d'avance à l'Employeur tout droit qu'il pourrait prétendre posséder relativement aux propriétés intellectuelles mentionnées ci-haut.
     
-    \section{Dispositions particulières}
-    \lipsumC
-    \section{Dispositions générales}
-    \lipsumC
-    \section{Entrée en vigueur du contrat}
-    \lipsumC
-    \section{Durée du contrat}
-    \lipsumC
-    \section{Fin du contrat}
-    \lipsumC
-    \section{Reconnaissance des parties}
-    \lipsumC
+    \section{Avis de cessation ou de démission}
+    	\subsection{Cessation}
+	    En cas de licenciement, l'Employeur s'engage à remettre un avis de cessation d'emploi à l'Employé en respectant les délais prévus par la loi, en vertu de l'ancienneté de l'Employé :
+	    
+	    \begin{itemize}
+	    	\item 3 mois de travail continu : 1 semaine de préavis
+	    	\item 1 an de travail continu : 2 semaines de préavis
+	    	\item 5 ans de travail continu : 4 semaines de préavis
+	    	\item 10 ans de travail continu : 8 semaines de préavis
+	    \end{itemize}
+	    
+	    Aucune compensation n'est prévue si ces délais sont respectés. Les exceptions suivantes s'appliquent quant au respect du délai, auxquelles s'y rattache un simple avis sans possibilité de compensation : %
+	    %TODO faire rentrer ça dans une page
+	    \begin{multicols}{2}
+		    \begin{itemize}
+		    	\item Force majeure
+		    	\item Faillite de l'Employeur
+		    	\item Décès de l'Employé
+		    	\item Faute grave
+		    \end{itemize}
+		\end{multicols}
+			    	
+    	\subsection{Démission}
+	    En cas de démission, l'Employé s'engage à remettre un avis de démission à l'Employeur dans les deux semaines précédant son départ.
+    
+    
+    
+    
+    
     
     
 
