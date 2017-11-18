@@ -39,4 +39,5 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(port);
+module.exports = app;
 console.log('Server started on port : ' + port);

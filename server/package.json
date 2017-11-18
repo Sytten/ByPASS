@@ -13,5 +13,15 @@
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.22.5",
     "sequelize-cli": "^3.0.0"
+  },
+  "devDependencies": {
+    "sql-fixtures": "^1.0.0",
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "mocha": "^2.4.5"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test sequelize db:migrate && mocha",
+    "fast_test": "NODE_ENV=test mocha"
   }
 }
