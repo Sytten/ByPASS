@@ -23,6 +23,7 @@ let chai = require('chai');
 let chaiHttp = require('chai-http');
 let server = require('../server');
 let should = chai.should();
+var assert = require('assert');
 
 chai.use(chaiHttp);
 
@@ -50,6 +51,7 @@ var dataSpec = {
 
 describe('/GET accounts', () => {
 
+
   // reset db and fill it before tests
   before(function(done) {
     this.timeout(3000); // increase timout here if database become larger
@@ -62,17 +64,42 @@ describe('/GET accounts', () => {
           done()
         })
       })
-    })
+    }).catch(function (err) { 
+        console.error(err.stack); 
+    }); 
   })
 
   
-  it('it should GET all the accounts', (done) => {
+  it('it should GET all the accounts', function(done) {
     chai.request(server)
       .get('/api/accounts')
       .end((err, res) => {
-          console.log(res.body)
           res.should.have.status(200);
           done();
     });
   });
+
+  it('it should display amount of client', function(done) {
+    chai.request(server)
+      .post('/api/zigbee/bridge', )
+      .send({ id: 024, method: '2', clientId: '0123456789' })
+      .end((err, res) => {
+          assert.equal(res.body['id'], 024);
+          assert.equal(res.body['solde'], 1200);
+          res.should.have.status(200);
+          done();
+      });
+  })
+
+  it('it should return 400 if client card does not exists', function(done) {
+    chai.request(server)
+      .post('/api/zigbee/bridge', )
+      .send({ id: "024", method: '2', clientId: 'NOTEXISTS' })
+      .end((err, res) => {
+          assert.notEqual(res.body['error'], null);
+          res.should.have.status(400);
+          done();
+      });
+  })
+  
 });
