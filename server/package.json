@@ -21,7 +21,7 @@
     "mocha": "^2.4.5"
   },
   "scripts": {
-    "test": "NODE_ENV=test sequelize db:migrate && mocha",
+    "test": "NODE_ENV=test sequelize db:migrate && NODE_ENV=test mocha",
     "fast_test": "NODE_ENV=test mocha"
   }
 }
