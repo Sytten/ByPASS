@@ -85,6 +85,15 @@ describe('/GET accounts', () => {
       });
   });
 
+  it('it should return 400 when no method is defined ', function(done) {
+    chai.request(server)
+      .post('/api/zigbee/bridge')
+      .end((err, res) => {
+          res.should.have.status(400);
+          done();
+      });
+  });
+
 // METHOD 1
 
   it('it should create a transaction', function(done) {

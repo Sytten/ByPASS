@@ -44,6 +44,7 @@ module.exports = {
 
       // METHOD NOT HANDLED
     	else {
+        console.log("ERROR method not found")
     		return res.status(400).json({ error: 0 });
     	}
     }
