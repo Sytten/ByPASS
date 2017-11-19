@@ -25,36 +25,9 @@ module.exports = {
   delete: function(req, res, next) {
     // Verify if one tranasaction is contains in lineItem
     verify.verifyParameter(req.params.id, 'Items id');
-    LineItem.findOne({where: {name: req.body.name}})
-    .then(count => {
-
-      // No transaction for this item
-      if (count == 0) {
-        return Item.destroy({
-          where: {
-            id: req.params.id
-          }
-        }).then(affected => {
-          res.redirect('/app/merchant/products')
-        }).catch(error => {
-          next(error)
-        })
-
-      // Transaction finded only merchant will be set off
-      }else{
-        Item.find({ where: {id: req.params.id} })
-        .then(function(item) {
-          item.updateAttributes({
-            merchant: "undefined"
-          })
-        }).then(result => res.status(201).json(result))
-        .catch(function (err) {
-          next(err);
-        });
-      }
-    }).catch(function (err) {
-      next(err);
-    });
+    return Item.update({ display: 0 }, { where: { id: req.params.id } }).then(() => {
+      return res.redirect('/app/merchant/products')
+    }).catch(function (err) { next(err); });
   },
 
   create: function(req, res, next) {

@@ -13,7 +13,7 @@ module.exports = {
   },
 
   products_table: function(req, res, next) {
-    Item.findAll({where : { merchant: req.body.id }, raw: true}).then(items => {
+    Item.findAll({where : { $and: { merchant: req.body.id, display: 1 } }, raw: true}).then(items => {
       res.render('merchant/parts/products_table', {items: items});
     })
   },

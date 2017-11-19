@@ -10,7 +10,8 @@ module.exports = function(sequelize, DataTypes) {
     shortcut:    DataTypes.INTEGER,
     name:        DataTypes.STRING,
     description: DataTypes.TEXT,
-    price:       DataTypes.DOUBLE.UNSIGNED
+    price:       DataTypes.DOUBLE.UNSIGNED,
+    display:     DataTypes.INTEGER
   });
 
   return Item;
