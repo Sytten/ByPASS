@@ -32,6 +32,7 @@ chai.use(chaiHttp);
 /* Setup fixtures */
 var sqlFixtures = require('sql-fixtures');
 var db = require('../models/index');
+var Item = require('../models').Item
 
 // db configs
 var dbConfig = {
@@ -52,8 +53,45 @@ var dataSpec = {
   Items: items_fixtures
 }
 
+describe("ITEMS", () => {
 
-describe('/GET accounts', () => {
+
+  // reset db and fill it before tests
+  beforeEach(function(done) {
+    this.timeout(3000); // increase timout here if database become larger
+    // drop the db
+    db.sequelize.drop({logging: false}).then(function() {
+      // Sync all models that aren't already in the database
+      db.sequelize.sync({logging: false}).then(function() {
+        // load fixtures
+        sqlFixtures.create(dbConfig, dataSpec, function(err, result) {
+          done()
+        }).catch(function (err) {
+          console.error(err.stack); 
+        });
+      })
+    }).catch(function (err) { 
+        console.error(err.stack); 
+    }); 
+  })
+
+  it.only('it should untied item from merchant when deleted', function(done) {
+    chai.request(server)
+      .get('/api/items/delete/AA2b20bd-a308-41ac-870a-e2e7b44a59c9')
+      .end((err, res) => {
+          res.should.have.status(200);
+
+          Item.findOne(
+            { where: { id: "AA2b20bd-a308-41ac-870a-e2e7b44a59c9" }})
+          .then((item) => {
+            assert.equal(item.display, 0);
+            done();
+          });
+      });
+  })
+});
+
+describe('ZIGBEE', () => {
 
 
   // reset db and fill it before tests
