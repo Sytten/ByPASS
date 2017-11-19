@@ -6,7 +6,8 @@ module.exports = {
         'Accounts',
         'card',
         {
-          type: Sequelize.UUID
+          type: Sequelize.STRING,
+          allowNull: true
         }
       )
   },
