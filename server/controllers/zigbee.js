@@ -39,6 +39,25 @@ module.exports = {
     		}).catch(function (err) { next(err); });
     	}
 
+      // METHOD 3
+
+      else if (req.body.method == 3) {
+        var client_card = req.body.clientId
+        var amount = req.body.amount
+
+        return Account.findOne({where: {card: client_card}}).then(function(client) {
+          if (!client) {
+            console.log('Client does not exists');
+            return res.status(200).json({ id: req.body.id, status: false, solde: -1});
+          }
+          
+          client.amount = parseFloat(client.amount) + (amount / 100)
+          return client.save().then(function() {
+            res.status(200).json({ id: req.body.id, status: true, solde: Math.round(client.amount * 100, 0)});
+          })
+
+        }).catch(function (err) { next(err); });
+      }
 
       // METHOD 4 
 
@@ -51,7 +70,7 @@ module.exports = {
         return Account.findOne({where: {pin: merchant_pin}}).then(function(merchant) {
           if (!merchant) {
             console.log('Merchant does not exists');
-            return res.status(400).json({ error: 20 });
+            return res.status(400).json({ error: 40 });
           }
 
           return Item.findAll({

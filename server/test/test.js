@@ -198,6 +198,33 @@ describe('/GET accounts', () => {
       });
   })
 
+// METHOD 3
+
+  it('it should add money to the account', function(done) {
+    chai.request(server)
+      .post('/api/zigbee/bridge', )
+      .send({ id: 765, method: '3', clientId: '0123456789', amount: 1246})
+      .end((err, res) => {
+          res.should.have.status(200);
+          assert.equal(res.body['id'], 765);
+          assert.equal(res.body['status'], true);
+          assert.equal(res.body['solde'], 121246);
+          done();
+      });
+  })
+
+  it('it should fail when client does not exists', function(done) {
+    chai.request(server)
+      .post('/api/zigbee/bridge', )
+      .send({ id: 765, method: '3', clientId: 'NOTEXISTS', amount: 1246})
+      .end((err, res) => {
+          res.should.have.status(200);
+          assert.equal(res.body['id'], 765);
+          assert.equal(res.body['status'], false);
+          assert.equal(res.body['solde'], -1);
+          done();
+      });
+  })
 
 // METHOD 4 
 
