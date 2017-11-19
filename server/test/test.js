@@ -213,6 +213,19 @@ describe('/GET accounts', () => {
       });
   })
 
+  it('it should fail when client does not exists', function(done) {
+    chai.request(server)
+      .post('/api/zigbee/bridge', )
+      .send({ id: 765, method: '3', clientId: 'NOTEXISTS', amount: 1246})
+      .end((err, res) => {
+          res.should.have.status(200);
+          assert.equal(res.body['id'], 765);
+          assert.equal(res.body['status'], false);
+          assert.equal(res.body['solde'], -1);
+          done();
+      });
+  })
+
 // METHOD 4 
 
   it('it should display the total for the checkout', function(done) {

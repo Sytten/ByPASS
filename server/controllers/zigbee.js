@@ -48,7 +48,7 @@ module.exports = {
         return Account.findOne({where: {card: client_card}}).then(function(client) {
           if (!client) {
             console.log('Client does not exists');
-            return res.status(200).json({ id: req.body.id, status: false, solde: Math.round(client.amount * 100, 0)});
+            return res.status(200).json({ id: req.body.id, status: false, solde: -1});
           }
           
           client.amount = parseFloat(client.amount) + (amount / 100)
