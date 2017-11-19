@@ -20,8 +20,6 @@ module.exports = {
       });
   },
 
-
-
   delete: function(req, res, next) {
     // Verify if one tranasaction is contains in lineItem
     verify.verifyParameter(req.params.id, 'Items id');

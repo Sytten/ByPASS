@@ -75,7 +75,7 @@ describe("ITEMS", () => {
     }); 
   })
 
-  it.only('it should untied item from merchant when deleted', function(done) {
+  it('it should untied item from merchant when deleted', function(done) {
     chai.request(server)
       .get('/api/items/delete/AA2b20bd-a308-41ac-870a-e2e7b44a59c9')
       .end((err, res) => {
