@@ -15,6 +15,14 @@ module.exports = [
     amount: 0,
     type: "MERCHANT",
     pin: 6969
+},
+
+{
+    id: "2a2b20bd-a308-41ac-870a-e2e7b44a59c9",
+    name: "mcdo1010",
+    amount: 0,
+    type: "MERCHANT",
+    pin: 4411
 }
 
 

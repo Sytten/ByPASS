@@ -75,6 +75,7 @@ describe('/GET accounts', () => {
     }); 
   })
 
+// ACCOUNTS
   
   it('it should GET all the accounts', function(done) {
     chai.request(server)
@@ -84,6 +85,8 @@ describe('/GET accounts', () => {
           done();
       });
   });
+
+// GENERAL CASES FOR METHOD
 
   it('it should return 400 when no method is defined ', function(done) {
     chai.request(server)
@@ -101,7 +104,6 @@ describe('/GET accounts', () => {
       .post('/api/zigbee/bridge', )
       .send({ id: 765, method: '1', clientId: '0123456789', merchantId: '6969', items: [11, 12, 14], qty: [1, 5, 2]})
       .end((err, res) => {
-        console.log(res.body)
           res.should.have.status(200);
           assert.equal(res.body['id'], 765);
           assert.equal(res.body['status'], true);
@@ -116,7 +118,6 @@ describe('/GET accounts', () => {
       .post('/api/zigbee/bridge', )
       .send({ id: 765, method: '1', clientId: '0123456789', merchantId: '6969', items: [10, 12, 14], qty: [1, 5, 2]})
       .end((err, res) => {
-        console.log(res.body)
           res.should.have.status(200);
           assert.equal(res.body['id'], 765);
           assert.equal(res.body['status'], false);
@@ -129,7 +130,6 @@ describe('/GET accounts', () => {
       .post('/api/zigbee/bridge', )
       .send({ id: 765, method: '1', clientId: '0123456789', merchantId: '9900', items: [11, 12, 14], qty: [1, 5, 2]})
       .end((err, res) => {
-        console.log(res.body)
           res.should.have.status(200);
           assert.equal(res.body['id'], 765);
           assert.equal(res.body['status'], false);
@@ -142,7 +142,6 @@ describe('/GET accounts', () => {
       .post('/api/zigbee/bridge', )
       .send({ id: 765, method: '1', clientId: 'NOTEXISTS', merchantId: '6969', items: [11, 12, 14], qty: [1, 5, 2]})
       .end((err, res) => {
-        console.log(res.body)
           res.should.have.status(200);
           assert.equal(res.body['id'], 765);
           assert.equal(res.body['status'], false);
@@ -167,7 +166,6 @@ describe('/GET accounts', () => {
       .post('/api/zigbee/bridge', )
       .send({ id: 765, method: '1', clientId: '0123456789', merchantId: '6969', items: [11, 12, 14], qty: [120, 5, 2]})
       .end((err, res) => {
-        console.log(res.body)
           res.should.have.status(200);
           assert.equal(res.body['id'], 765);
           assert.equal(res.body['status'], false);
@@ -199,5 +197,54 @@ describe('/GET accounts', () => {
           done();
       });
   })
+
+
+// METHOD 4 
+
+  it('it should display the total for the checkout', function(done) {
+    chai.request(server)
+      .post('/api/zigbee/bridge', )
+      .send({ id: 765, method: '4', merchantId: '6969', items: [11, 12, 14], qty: [1, 5, 2]})
+      .end((err, res) => {
+          res.should.have.status(200);
+          assert.equal(res.body['id'], 765);
+          assert.equal(res.body['total'], 66.10);
+          done();
+      });
+  })
+
+  it('it should fail if one item does not exists', function(done) {
+    chai.request(server)
+      .post('/api/zigbee/bridge', )
+      .send({ id: 765, method: '4', merchantId: '6969', items: [11, 12, 0], qty: [1, 5, 2]})
+      .end((err, res) => {
+          res.should.have.status(400);
+          assert.notEqual(res.body['error'], null);
+          done();
+      });
+  })
+
+  it('it should fail if qty size does not match item size', function(done) {
+    chai.request(server)
+      .post('/api/zigbee/bridge', )
+      .send({ id: 765, method: '4', merchantId: '6969', items: [11, 12, 14], qty: [ 5, 2]})
+      .end((err, res) => {
+          res.should.have.status(400);
+          assert.notEqual(res.body['error'], null);
+          done();
+      });
+  })
+
+  it('it should fail if one of the items does not belong to merchant', function(done) {
+    chai.request(server)
+      .post('/api/zigbee/bridge', )
+      .send({ id: 765, method: '4', merchantId: '6969', items: [11, 12, 20], qty: [1, 5, 2]})
+      .end((err, res) => {
+          res.should.have.status(400);
+          assert.notEqual(res.body['error'], null);
+          done();
+      });
+  })
+
   
 });

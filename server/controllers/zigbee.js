@@ -36,10 +36,56 @@ module.exports = {
     			else {
     				return res.status(400).json({ error: 20 });
     			}
-    		}).catch(function (err) {
-              next(err);
-  		});
+    		}).catch(function (err) { next(err); });
     	}
+
+
+      // METHOD 4 
+
+      else if (req.body.method == 4) {
+
+        var merchant_pin = req.body.merchantId
+        var items_shortcuts = req.body.items
+        var qty = req.body.qty
+
+        return Account.findOne({where: {pin: merchant_pin}}).then(function(merchant) {
+          if (!merchant) {
+            console.log('Merchant does not exists');
+            return res.status(400).json({ error: 20 });
+          }
+
+          return Item.findAll({
+            where: {
+              $and : {
+                shortcut: items_shortcuts,
+                merchant: merchant.id
+              }
+              
+            }
+          })
+          .then((items) => {
+            if (items_shortcuts.length != qty.length) {
+              console.log('Items length does not match qty length');
+              return res.status(400).json({ error: 20 });
+            }
+
+            if (items_shortcuts.length != items.length) {
+              console.log('Some items shortcuts does not exists in the DB');
+              return res.status(400).json({ error: 20 });
+            }
+
+            // calculate amount
+            var amount = 0;
+            for(i = 0; i < items.length; i++) {
+              amount += items[i].price * qty[i];
+            }
+
+            return res.status(200).json({ id: req.body.id, total: amount });
+
+         })
+        }).catch(function (err) { next(err); });
+      }
+
 
 
       // METHOD NOT HANDLED

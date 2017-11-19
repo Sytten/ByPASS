@@ -35,5 +35,16 @@ module.exports = [
 },
 
 
+{
+    id: "AD2b20bd-a308-41ac-870a-e2e7b44a59c9",
+    merchant: "2a2b20bd-a308-41ac-870a-e2e7b44a59c9",
+    shortcut: 20,
+    name: "McNuggets",
+    description: "Delicious",
+    price: 6.99,
+    createdAt: 19800101,
+    updatedAt: 19800101
+},
+
 ]
 
