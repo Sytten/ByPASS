@@ -107,7 +107,7 @@ describe('/GET accounts', () => {
           res.should.have.status(200);
           assert.equal(res.body['id'], 765);
           assert.equal(res.body['status'], true);
-          assert.equal(res.body['solde'], 1200 - 66.10);
+          assert.equal(res.body['solde'], 113390);
           
           done();
       });
@@ -181,7 +181,7 @@ describe('/GET accounts', () => {
       .send({ id: 024, method: '2', clientId: '0123456789' })
       .end((err, res) => {
           assert.equal(res.body['id'], 024);
-          assert.equal(res.body['solde'], 1200);
+          assert.equal(res.body['solde'], 120000);
           res.should.have.status(200);
           done();
       });
@@ -208,7 +208,7 @@ describe('/GET accounts', () => {
       .end((err, res) => {
           res.should.have.status(200);
           assert.equal(res.body['id'], 765);
-          assert.equal(res.body['total'], 66.10);
+          assert.equal(res.body['total'], 6610);
           done();
       });
   })

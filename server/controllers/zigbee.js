@@ -14,7 +14,7 @@ module.exports = {
 
         transaction_helper.create_zigbee_transaction(client_card, merchant_pin, items_shortcuts, qty)
         .then(function(client) {
-          return res.status(200).json({id: req.body.id, status: true, solde: client.amount})
+          return res.status(200).json({id: req.body.id, status: true, solde: Math.round(client.amount * 100, 0) })
         }).catch(function (err) {
           console.log("ERROR : " + err.message)
           return res.status(200).json({id: req.body.id, status: false, solde: -1})
@@ -31,7 +31,7 @@ module.exports = {
     			}
     		}).then((client) => {
     			if(client) {
-    				return res.status(200).json({id: req.body.id, solde: client.amount});
+    				return res.status(200).json({id: req.body.id, solde: Math.round(client.amount * 100, 0) });
     			}
     			else {
     				return res.status(400).json({ error: 20 });
@@ -79,8 +79,8 @@ module.exports = {
             for(i = 0; i < items.length; i++) {
               amount += items[i].price * qty[i];
             }
-
-            return res.status(200).json({ id: req.body.id, total: amount });
+          
+            return res.status(200).json({ id: req.body.id, total: Math.round(amount * 100, 0)});
 
          })
         }).catch(function (err) { next(err); });
