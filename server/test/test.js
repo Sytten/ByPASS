@@ -18,6 +18,8 @@ philippe girard 2017
 
 *****/
 
+process.env.NODE_ENV = 'test'; // defensive programming :( 
+
 // Dependencies for testing
 let chai = require('chai');
 let chaiHttp = require('chai-http');
@@ -94,7 +96,7 @@ describe('/GET accounts', () => {
           res.should.have.status(200);
           assert.equal(res.body['id'], 765);
           assert.equal(res.body['status'], true);
-          assert.equal(res.body['solde'], 66.10);
+          assert.equal(res.body['solde'], 1200 - 66.10);
           
           done();
       });
@@ -130,6 +132,31 @@ describe('/GET accounts', () => {
     chai.request(server)
       .post('/api/zigbee/bridge', )
       .send({ id: 765, method: '1', clientId: 'NOTEXISTS', merchantId: '6969', items: [11, 12, 14], qty: [1, 5, 2]})
+      .end((err, res) => {
+        console.log(res.body)
+          res.should.have.status(200);
+          assert.equal(res.body['id'], 765);
+          assert.equal(res.body['status'], false);
+          done();
+      });
+  })
+
+  it('it should fail when qty length differ from item length', function(done) {
+    chai.request(server)
+      .post('/api/zigbee/bridge', )
+      .send({ id: 765, method: '1', clientId: '0123456789', merchantId: '6969', items: [11, 12, 14], qty: [5, 2]})
+      .end((err, res) => {
+          res.should.have.status(200);
+          assert.equal(res.body['id'], 765);
+          assert.equal(res.body['status'], false);
+          done();
+      });
+  })
+
+  it('it should fail when client does not have enough money', function(done) {
+    chai.request(server)
+      .post('/api/zigbee/bridge', )
+      .send({ id: 765, method: '1', clientId: '0123456789', merchantId: '6969', items: [11, 12, 14], qty: [120, 5, 2]})
       .end((err, res) => {
         console.log(res.body)
           res.should.have.status(200);
