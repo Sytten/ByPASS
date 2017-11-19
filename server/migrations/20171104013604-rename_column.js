@@ -1,11 +1,11 @@
 'use strict';
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    queryInterface.renameColumn('LineItems', 'transactionId', 'TransactionId')
+  up: function(queryInterface, Sequelize) {
+    return queryInterface.renameColumn('LineItems', 'transactionId', 'TransactionId')
   },
 
-  down: (queryInterface, Sequelize) => {
-    queryInterface.renameColumn('LineItems', 'TransactionId', 'transactionId')
+  down: function(queryInterface, Sequelize) {
+    return queryInterface.renameColumn('LineItems', 'TransactionId', 'transactionId')
   }
 };
