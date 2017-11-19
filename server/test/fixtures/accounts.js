@@ -13,7 +13,8 @@ module.exports = [
     id: "1a2b20bd-a308-41ac-870a-e2e7b44a59c9",
     name: "merc2020",
     amount: 0,
-    type: "MERCHANT"
+    type: "MERCHANT",
+    pin: 6969
 }
 
 

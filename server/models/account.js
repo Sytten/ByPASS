@@ -9,7 +9,8 @@ module.exports = function(sequelize, DataTypes) {
       name:   DataTypes.STRING,
       amount: DataTypes.DECIMAL,
       type:   DataTypes.STRING,
-      card:   DataTypes.STRING
+      card:   DataTypes.STRING,
+      pin:   DataTypes.INTEGER
     },{
       createdAt: false,
       updatedAt: false,
