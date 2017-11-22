@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 NOV 2017 21:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 NOV 2017 14:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1443,40 +1443,46 @@ Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 \c@lipsumCTR=\count294
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write4
- Excluding comment 'comment') (/Users/mathieudostie/Documents/Projet/SRC/Rapports/ByPASS-Reports/Contrat (APP de droit)/.texpadtmp/main.aux)
+ Excluding comment 'comment') (/usr/local/texlive/2017/texmf-dist/tex/latex/pgfornament/pgfornament.sty (/usr/local/texlive/2017/texmf-dist/tex/latex/pgfopts/pgfopts.sty
+Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
+\pgfopts@list@add@a@toks=\toks49
+\pgfopts@list@add@b@toks=\toks50
+)
+Package: pgfornament 2016/03/05 v0.21 vector ornaments
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/pgfornament/pgflibraryvectorian.code.tex)) (/Users/mathieudostie/Documents/Projet/SRC/Rapports/ByPASS-Reports/Contrat (APP de droit)/.texpadtmp/main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 9.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 8.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 9.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \degres on input line 8.
-LaTeX Info: Redefining \dots on input line 8.
+LaTeX Info: Redefining \degres on input line 9.
+LaTeX Info: Redefining \dots on input line 9.
 Package frenchb.ldf Info: Setting StandardEnumerateEnv=true for
 (frenchb.ldf)             compatibility with enumerate package,
-(frenchb.ldf)             reported on input line 8.
-LaTeX Info: Redefining \up on input line 8.
-LaTeX Info: Redefining \microtypecontext on input line 8.
+(frenchb.ldf)             reported on input line 9.
+LaTeX Info: Redefining \up on input line 9.
+LaTeX Info: Redefining \microtypecontext on input line 9.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1490,7 +1496,7 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
 \AtBeginShipoutBox=\box96
-Package hyperref Info: Link coloring OFF on input line 8.
+Package hyperref Info: Link coloring OFF on input line 9.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1498,9 +1504,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count295
 )
-LaTeX Info: Redefining \ref on input line 8.
-LaTeX Info: Redefining \pageref on input line 8.
-LaTeX Info: Redefining \nameref on input line 8.
+LaTeX Info: Redefining \ref on input line 9.
+LaTeX Info: Redefining \pageref on input line 9.
+LaTeX Info: Redefining \nameref on input line 9.
  (/Users/mathieudostie/Documents/Projet/SRC/Rapports/ByPASS-Reports/Contrat (APP de droit)/.texpadtmp/main.out) (/Users/mathieudostie/Documents/Projet/SRC/Rapports/ByPASS-Reports/Contrat (APP de droit)/.texpadtmp/main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -1512,12 +1518,12 @@ LaTeX Info: Redefining \nameref on input line 8.
 \scratchbox=\box97
 \nofMPsegments=\count297
 \nofMParguments=\count298
-\everyMPshowfont=\toks49
+\everyMPshowfont=\toks51
 \MPscratchCnt=\count299
 \MPscratchDim=\dimen312
 \MPnumerator=\count300
 \makeMPintoPDFobject=\count301
-\everyMPtoPDFconversion=\toks50
+\everyMPtoPDFconversion=\toks52
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
  (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/grfext.sty
@@ -1575,29 +1581,29 @@ Dictionary: translator-basic-dictionary, Language: English
 File: siunitx-abbreviations.cfg 2017/05/19 v2.7g siunitx: Abbreviated units
 )
 \c__siunitx_mathsf_int=\count302
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 8.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 9.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 8.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 9.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 8.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 9.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 8.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 9.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 8.
+(Font)              <10> on input line 9.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 8.
+(Font)              <7> on input line 9.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 8.
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 8.
+(Font)              <5> on input line 9.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 9.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1606,7 +1612,7 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 \c__siunitx_mathtt_int=\count303
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 8.
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 9.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1632,42 +1638,57 @@ Package microtype Info: Loading generic settings for font family
  [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
-Underfull \hbox (badness 10000) in paragraph at lines 28--29
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--40
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfornament/vectorian/vectorian70.pgf) (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfornament/vectorian/vectorian70.pgf) (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfornament/vectorian/vectorian70.pgf)pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.63 
-      [1] [2] [3] [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 117.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 117.
+l.74 
+      [1] [2] [3] [4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--209
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--222
+
+ []
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgfornament/vectorian/vectorian70.pgf) [6]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 238.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 238.
  (/Users/mathieudostie/Documents/Projet/SRC/Rapports/ByPASS-Reports/Contrat (APP de droit)/.texpadtmp/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 117.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 117.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 238.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 238.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 117.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 238.
  ) 
 Here is how much of TeX's memory you used:
- 33037 strings out of 492995
- 638296 string characters out of 6132704
- 813493 words of memory out of 5000000
- 36003 multiletter control sequences out of 15000+600000
- 61522 words of font info for 75 fonts, out of 8000000 for 9000
+ 33215 strings out of 492995
+ 643217 string characters out of 6132704
+ 837759 words of memory out of 5000000
+ 36144 multiletter control sequences out of 15000+600000
+ 58574 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,54p,10396b,823s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on "/Users/mathieudostie/Documents/Projet/SRC/Rapports/ByPASS-Reports/Contrat (APP de droit)/.texpadtmp/main.pdf" (5 pages, 209332 bytes).
+ 57i,6n,56p,10396b,823s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on "/Users/mathieudostie/Documents/Projet/SRC/Rapports/ByPASS-Reports/Contrat (APP de droit)/.texpadtmp/main.pdf" (7 pages, 202741 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 128 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 21661 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 208 PDF objects out of 1000 (max. 8388607)
+ 189 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
+ 21237 words of extra memory for PDF output out of 24883 (max. 10000000)
 
