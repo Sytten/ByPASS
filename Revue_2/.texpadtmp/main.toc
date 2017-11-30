@@ -1,0 +1,5 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Cahier des charges}{1}{section.1}
+\contentsline {section}{\numberline {2}Diagramme de cas d'utilisation du prototype}{5}{section.2}
+\contentsline {section}{\numberline {3}Gestion des risques (mise \IeC {\`a} jour)}{6}{section.3}
+\contentsline {section}{\numberline {4}Assurance qualit\IeC {\'e}}{9}{section.4}

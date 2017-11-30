@@ -1,0 +1,64 @@
+\begin{table}[h]
+	\centering
+	\caption{Grille de cotation de 1 à 10}
+	\begin{tabular}{lP{3cm}lP{3cm}lP{3cm}}
+		\hline
+		\bf Note F & \bf Fréquence & \bf Note G & \bf Gravité & \bf Note D & \bf Probabilité de non-détection \\
+		\hline
+		\hline
+		10 & Permanent & 10 & Mort d'homme & 10 & Aucune probabilité de détection   \\\\
+		5 & Fréquent & 5 & Conséquences financières et/ou matérielles & 5 & Possibilité de détection \\\\
+		1 & Invraisemblable & 1 & Pas grave & 1 & Détection infaillible  \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\caption{Risques de gestion}
+	\begin{tabular}{P{2cm}P{2cm}P{2cm}llllP{2cm}llll}
+		\hline
+		\bf Mode & \bf Effet & \bf Cause & \bf F & \bf G & \bf D & \bf C & \bf Action & \bf F & \bf G & \bf D & \bf C  \\
+		\hline
+		\hline
+		Airtable hors service & Aucun accès à la gestion de projet & Hors de notre contrôle & 1 & 3 & 1 & 3 & Suivre les instructions du site web & 1 & 1 & 1 & 1  \\\\
+		Mauvais mise à jour des tâches & Pas bon statu du projet & Indiscipline des membres de l'équipe & 5 & 2 & 3 & 30 & Faire un suivi hebdomadaire & 10 & 3 & 3 & 90 \\\\
+		Limite de cartes sur Airtable & Aucune possibilité d'en ajouter de nouvelles & Utilisation de la version gratuite & 2 & 2 & 1 & 4 & Créer un 2\ieme{} Airtable & 3 & 1 & 1 & 3 \\\\
+		Éléments de conception manquants & La définition du projet n'est pas complète & Oublie de l'équipe & 2 & 4 & 2 & 16 & Concevoir les éléments manquants & 2 & 5 & 2 & 20\\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\caption{Risques par rapport au \emph{hardware}}
+	\begin{tabular}{P{2cm}P{2cm}P{2cm}llllP{2cm}llll}
+		\hline
+		\bf Mode & \bf Effet & \bf Cause & \bf F & \bf G & \bf D & \bf C & \bf Action & \bf F & \bf G & \bf D & \bf C  \\
+		\hline
+		\hline
+		Mauvais branchements & Le non fonctionnement du système & Les pièces ont été mal branchées & 4 & 1 & 2 & 8 & Vérifier les points de tests & 2 & 1 & 2 & 4 \\\\
+		Défectuosités & La pièce ne fonctionne pas comme prévu & La pièce est brisée & 3 & 5 & 2 & 30 &	Acheter des nouvelles pièces & 1 & 3 & 1 & 3 \\\\
+		Manque de pins & Incapable de brancher toutes les pièces & Utilisation de toutes les pins & 2 & 4 & 1 & 8 & Mettre un multiplexeur & 1 & 5 & 2 & 10 \\\\
+        Manque d'événements & Les ZigBee ne reçoivent pas toutes les paquets & Mauvaise communication entre les ZigBee & 4 & 4 & 3 & 48 & Gérer la réception des paquets & 2 & 2 & 3 & 12 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\caption{Risques par rapport au \emph{software}}
+	\begin{tabular}{P{2cm}P{2cm}P{2cm}llllP{2cm}llll}
+		\hline
+		\bf Mode & \bf Effet & \bf Cause & \bf F & \bf G & \bf D & \bf C & \bf Action & \bf F & \bf G & \bf D & \bf C  \\
+		\hline
+		\hline
+		Mauvais communication ZigBee & Les ZigBee fonctionnent mal & Problème dans le protocole de communication & 4 & 3 & 3 & 36 & Corriger les problèmes de communications (protocole) & 1 & 3 & 2 & 6 \\\\ 
+		Segmentation de mémoire & Le programme ne fonctionne pas bien & Trop grande utilisation de la mémoire Hype & 2 & 5 & 7 & 70 & Vérifier la gestion/déclaration de variables, utiliser une mémoire pool & 2 & 4 & 4 & 32 \\\\
+		Maintenance du code & Le code n'est pas lisible & Programmeur non soucieux du détail & 2 & 1 & 1 & 2 & Ajout de commentaires, clarification du code & 2 & 1 & 1 & 2 \\\\
+		Crash du programme & Le programme arrête de fonctionner & Il y a un problème majeur dans le code & 2 & 5 & 2 & 20 & Trouver les défectuosités du programme, mieux gérer les erreurs & 2 & 2 & 2 & 8 \\\\
+		Limite de performance & Le programme n'est plus en temps réel & Le CPU n'est pas assez puissant pour la tâche demandée & 4 & 5 & 4 & 80 & Développer sur un Mbed plus puissant & 1 & 4 & 3 & 12 \\
+		
+		\hline
+	\end{tabular}
+\end{table}

@@ -1,0 +1,48 @@
+\begin{table}[hp]
+	\centering
+	\caption{Fonctionnalités du serveur}
+	\begin{tabular}{lP{2.5cm}P{2.5cm}P{2.5cm}P{2.5cm}l}
+	\hline
+	\bf Code & \bf Fonctionnalité & \bf Objectif & \bf Description & \bf Contraintes & \bf Priorité \\
+	\hline
+	\hline
+	4.1 &
+	Autorisation des paiements &
+	Associer une transaction au bon compte &
+	Doit être capable de savoir si le compte a assez d’argent &
+	État autorisé ou non &
+	1 \\\\
+	4.2 &
+	Autorisation des recharges &
+	Associer un dépôt d’argent  au bon compte &
+	Doit être capable d’ajouter le montant déposé au bon compte &
+	État autorisé ou non &
+	1 \\\\
+	4.3 &
+	Persistance des transactions et des états de compte &
+	Être en mesure d’avoir un état du compte à tout moment &
+	Le système doit enregistrer toutes les transactions reliées à un compte &
+	À vie -- Procédure de backup &
+	1 \\\\
+	4.4 &
+	Interface Web pour les usagers &
+	Faire le suivi de ses achats &
+	L’utilisateur doit être en mesure de voir toutes les achats qu’il a fait &
+	Affichage du prix, de la quantité et de l’endroit &
+	2 \\\\
+	4.5 &
+	Interface Web pour les vendeurs &
+	Faire le suivi de ses ventes &
+	Le vendeur doit être en mesure de voir toutes les ventes qu’il a fait &
+	Affichage du prix, de la quantité et de l’endroit (ou client) &
+	3 \\\\
+	4.6 &
+	Protéger le réseau contre la falsification &
+	Sécuriser les transactions entre les différents noeuds &
+	Utiliser une connexion sécurisée pour éviter que quelqu’un vole des données ou de l’argent &
+	Encryption des communications &
+	4 \\
+	\hline
+	\end{tabular}
+	\label{cahierSer}
+\end{table}
