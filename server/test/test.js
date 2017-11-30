@@ -33,6 +33,9 @@ chai.use(chaiHttp);
 var sqlFixtures = require('sql-fixtures');
 var db = require('../models/index');
 var Item = require('../models').Item
+var Transaction = require('../models').Transaction
+var LineItem = require('../models').LineItem
+var Account = require('../models').Account
 
 // db configs
 var dbConfig = {
@@ -146,8 +149,34 @@ describe('ZIGBEE', () => {
           assert.equal(res.body['id'], 765);
           assert.equal(res.body['status'], true);
           assert.equal(res.body['solde'], 113390);
-          
-          done();
+
+          // validate transaction amount in merchant and client account
+          Transaction.findOne({
+            where : {},
+            order: [ [ 'createdAt', 'DESC' ]],
+            include: [{
+              model: LineItem,
+              as: "lineItems",
+              include: [{
+                model: Item,
+                as: "item",
+              }]
+            },
+            {
+              model: Account,
+              as: "marchand"
+            },
+            {
+              model: Account,
+              as: "client_t"
+            }],
+
+            raw: true,
+          }).then((transaction) => {
+            assert.equal(transaction['client_t.amount'], 1133.9);
+            assert.equal(transaction['marchand.amount'], 66.10);
+            done();
+          });
       });
   })
 

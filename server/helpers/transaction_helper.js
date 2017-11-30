@@ -61,7 +61,16 @@ create_transaction = function(merchant_id, client_id, lineItems, amount) {
         }
         else {
           client.amount = client.amount - amount;
-          return client.save({transaction: t})
+          return client.save({transaction: t}).then(function() {
+            return Account.findById(merchant_id, {transaction: t}).then(function (merchant) {
+
+              merchant.amount = +merchant.amount + +amount;
+              return merchant.save().then(() => {
+                // javascript c'est un gros hack donc je retourne client ici. À fix un jour.
+                return client; // it is important to return client at the end of create_transaction
+              });
+            });
+          });
         }
       })
 
