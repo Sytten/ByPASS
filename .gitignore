@@ -1,0 +1,11 @@
+*~
+.DS_Store
+#########################
+# LaTeX Temporary Files #
+#########################
+
+*.aux
+*.log
+*.synctex.gz
+*.toc
+
