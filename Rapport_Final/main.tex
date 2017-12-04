@@ -1,0 +1,34 @@
+\documentclass{article}
+
+\input{preambule.tex}
+\usepackage{comment}
+\usepackage{longtable}
+\usepackage{csvsimple}
+\usepackage{enumitem}
+\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
+
+\begin{document}
+
+	\input{titlepage}
+	
+	\pagenumbering{roman}
+	\tableofcontents
+	\clearpage
+    
+    \pagenumbering{arabic}
+
+    \onehalfspacing
+    
+    \include{PresentationPrototype}
+    \include{CahierCharges}
+    \include{Branchements}
+    \include{ProcedureTests}
+    \include{ExplicationsTechniques}
+    \include{Diagrammes}
+    \include{StructureProjet}
+   	\include{Reflexion}
+    \include{GestionProjet}
+    \include{GestionRisques}
+    \include{SchemasElectriques}
+        
+\end{document}
