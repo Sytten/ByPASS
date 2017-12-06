@@ -4,7 +4,7 @@
     <th>Produits</th>
     <th>Description</th>
     <th>Prix</th>
-    <th>Shortcut</th>
+    <th>Raccourci</th>
     <th>Action</th>
   </tr>
 
@@ -16,7 +16,7 @@
       <td><%= items[i].shortcut %></td>
       <td><a href='/api/items/delete/<%= items[i].id %>'>supprimer</a></td>
     </tr>
-  <% } %>  
+  <% } %>
 
   <tr>
       <td><input id="p_add_name" class="p_input" /></td>
