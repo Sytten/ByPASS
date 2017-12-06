@@ -24,7 +24,11 @@
 		\bf Test & \bf Procédure & \bf Résultat attendu \\
 		\hline
 		\hline
-		\csvreader[head to column names, late after line=\\]{Tables/QA_UTF8.csv}{}%
+		\csvreader[
+			head to column names,
+			late after line=\\\\,
+			respect leftbrace = false,
+			respect rightbrace = false]{Tables/QA_UTF8.csv}{}%
 		{\Test & \Procedure & \ResultatAttendu}
-		\\\hline
+%		\\\hline
 	\end{longtable}

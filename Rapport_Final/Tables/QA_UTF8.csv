@@ -43,4 +43,3 @@ Effectué une transaction complète,Terminal Paiement,"Le marchand entre son ide
 Roulement de la MEF,Terminal Recharge,Faire rouler le squelette du code du terminal de recharge,Les bons états s'exécutent (confirmé par des printf),checked,
 Lecture de la carte RFID,Terminal Recharge,Présenter une carte valide devant le lecture RFID,Le lecture détecte la carte et il associe le bon compte à la carte,checked,
 Dépôt d'argent,Terminal Recharge,"Déposé des pièces de monnaie (0.05, 0.10, 0.25, 1 et 2) et voir si le monnayeur détecte les bonnes pièces ",Le monyaeur détecte la bonne pièce déposée,checked,
-Effectué une recharge,Terminal Recharge,Effectuer une recharge dans un compte utilisateur,Le solde de l'utilisateur est mis à jour suite au dépôt d'argent,checked,
