@@ -47,14 +47,26 @@ Note : La base de données sur le raspberry pi démarre automatiquement, mais pa
 		\caption{Schéma des branchements du terminal de paiement}
 		\label{fig.branchPaiement}
 	\end{figure}
+
+	\begin{figure}[p]
+		\includegraphics[width=\textwidth]{Pictures/Branchements/Paiement_Bloc}
+		\caption{Schéma-bloc du terminal de paiement}
+		\label{fig.blocPaiement}
+	\end{figure}
 		
 	\subsection{Terminal de recharge}
-	Tout comme le terminal de paiement l’alimentation se fait grâce à une batterie Li-ion, sur ce montage nous avons ajouté un régulateur de tension 12V pour l’alimentation du monnayeur, étant donné que nous n’avions à notre disposition qu’un régulateur de tension linéaire de type LM317, l'inconvénient avec ce type de régulateur est que beaucoup de puissance est dissipé dans ce dernier. C’est pour cela que nous avons rajouté le transistor mosfet 2N7000 pour alimenter ou non le monnayeur, en appliquant un tension sur la gate du 2N7000 nous connectons l’alimentation négative du monnayeur au GND et ceci nous permet d'économiser beaucoup d’énergie. Le monnayeur quant à lui est un module qui se configure à l’aide d’une interface utilisateur sommaire, une fois configuré et lorsqu’une pièce est détectée, le monnayeur nous délivre $N$  flancs descendants ($N$ correspondant à la valeur de la pièce que nous avons configuré ).
+	Tout comme le terminal de paiement l’alimentation se fait grâce à une batterie Li-ion. Sur ce montage, nous avons ajouté un régulateur de tension 12~V pour l’alimentation du monnayeur, étant donné que nous n’avions à notre disposition qu’un régulateur de tension linéaire de type~LM317. L'inconvénient avec ce type de régulateur est que beaucoup de puissance est dissipée dans ce dernier; c’est pour cela que nous avons rajouté le transistor MOSFET 2N7000 pour alimenter ou non le monnayeur. En appliquant une tension sur la \emph{gate} du 2N7000, nous connectons l’alimentation négative du monnayeur au GND, et ceci nous permet d'économiser beaucoup d’énergie. Le monnayeur quant à lui est un module qui se configure à l’aide d’une interface utilisateur sommaire, une fois configuré et lorsqu’une pièce est détectée, le monnayeur nous délivre $N$ flancs descendants ($N$ correspondant à la valeur de la pièce que nous avons configurée).
 
 	\begin{figure}[p]
 		\includegraphics[width=\textwidth]{Pictures/Branchements/Terminal_Recharge}
 		\caption{Schéma des branchements du terminal de recharge}
 		\label{fig.branchRecharge}
+	\end{figure}
+
+	\begin{figure}[p]
+		\includegraphics[width=\textwidth]{Pictures/Branchements/Recharge_Bloc}
+		\caption{Schéma-bloc du terminal de recharge}
+		\label{fig.blocRecharge}
 	\end{figure}
 
 	
