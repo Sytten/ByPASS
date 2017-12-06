@@ -1,4 +1,4 @@
-Test,Section,Procedure,ResultatAttendu,Effectue,Commentaires
+﻿Test,Section,Procedure,ResultatAttendu,Effectue,Commentaires
 Initialisation,Affichage,Envoie de commande et de caractère avant l'initialisation,Rien ne s'affiche,checked,
 Affichage d'une chaîne de caractère,Affichage,"Envoie de la trame ""Borne de Paiement"" grâce à la fonction d'envoi",La trame est bien affichée,checked,
 Mise en veille,Affichage,Mettre la pin correspondante à la DEL du rétro-éclairage à l'état bas,Affichage est en veille et consomme moins de courant,checked,

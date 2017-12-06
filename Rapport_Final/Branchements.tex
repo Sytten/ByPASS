@@ -18,16 +18,18 @@ Note : La base de données sur le raspberry pi démarre automatiquement, mais pa
 		\item Exécuter la commande \code{pm2 start server.js}
 	\end{enumerate}
 	
-	\begin{figure}[p]
+	\subsection{Pont}
+	Le branchement du pont est relativement simple. Le LPC est connecté au port RJ45 afin de communiquer avec le serveur. Il est aussi connecté au module Xbee Contrôleur afin de recevoir les requêtes des terminaux et transmettre les réponses du serveur.
+	
+	\begin{figure}[h]
 		\includegraphics[width=\textwidth]{Pictures/Branchements/general}
 		\caption{Schéma-bloc des composantes générales du prototype}
 		\label{fig.general}
 	\end{figure}
+	
+	\clearpage
 
-	\subsection{Pont}
-	Le branchement du pont est relativement simple. Le LPC est connecté au port RJ45 afin de communiquer avec le serveur. Il est aussi connecté au module Xbee Contrôleur afin de recevoir les requêtes des terminaux et transmettre les réponses du serveur.
-
-	\begin{figure}[p]
+	\begin{figure}[t]
 		\includegraphics[width=\textwidth]{Pictures/Branchements/Pont}
 		\caption{Schéma des branchements du pont}
 		\label{fig.branchPont}

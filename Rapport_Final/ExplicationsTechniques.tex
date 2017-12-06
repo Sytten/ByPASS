@@ -11,8 +11,7 @@
 		Il est important de noter que le programme ne (dé)sérialise pas le JSON qu’il reçoit du serveur ou des Xbee. Cela est dû au fait qu’il manque de mémoire sur le MBED à cause de la bibliothèque Ethernet. Ainsi toutes les requêtes HTTP sont transmises au serveur sur le même \og endpoint \fg{} et les réponses sont transmises intégralement aux terminaux qui eux, s’occuperont de les traiter.
 		
 		\begin{figure}[p]
-			\centering
-			\input{Pictures/UML/PontSequence}
+			\includegraphics[width=\textwidth]{Pictures/UML/reseauSequence}
 			\caption{Diagramme de séquence du pont}
 			\label{fig.pontseq}
 		\end{figure}
@@ -31,8 +30,7 @@
 		Le dernier état de la MEF sert à ajouter le montant déposé au solde de l’utilisateur. Pour ce faire, le programme utilise encore la librairie JSON pour construire un message qu’il envoie via le module XBEE au serveur. Si l’envoi se passe bien, le programme reçoit une réponse du serveur avec le nouveau solde de l’utilisateur. Le programme affiche le nouveau solde à l’écran et retombe dans son état initial, en attente d’un nouvel utilisateur.
 		
 		\begin{figure}[p]
-			\centering
-			\input{Pictures/UML/RechargeSequence}
+			\includegraphics[width=\textwidth]{Pictures/UML/RechargeSequence}
 			\caption{Diagramme de séquence du terminal de recharge}
 			\label{fig.rechseq}
 		\end{figure}
@@ -76,12 +74,14 @@
 
 		Le programme change alors l’état pour RFID. Dans ce dernier, le programme attend de façon bloquante que le client tape sa carte sur le lecteur RFID disposé sur le devant du terminal. Une fois que la carte est lue, le programme change pour l’état PAYMENT. Dans cet état, le programme utilise de nouveau la librairie JSON pour créer un message recevable par le serveur et l’envoie par Xbee au pont.  Si tout va bien, il reçoit du serveur un message JSON qu’il décode pour savoir si le paiement a été accepté et connaître le solde restant sur la carte. Une lumière s’affiche en conséquence (verte si tout est correct, jaune sinon) et le solde de la carte est affiché à l’utilisateur. Finalement, le programme revient dans l’état GET\_CART\_TOTAL.
 
-		\begin{sidewaysfigure}[p]
-			\centering
-			\input{Pictures/UML/PaieSequence}
-			\caption{Diagramme de séquence du terminal de paiement}
-			\label{fig.paieseq}
-		\end{sidewaysfigure}
+		\begin{landscape}
+			\begin{figure}[p]
+				\includegraphics[width=1.5\textheight]{Pictures/UML/PaiementSequence}
+				\caption{Diagramme de séquence du terminal de paiement}
+				\label{fig.paieseq}
+			\end{figure}			
+		\end{landscape}
+
 
 		\subsubsection{Protocole}
 		Le terminal de paiement utilise deux autres types de messages JSON sur les quatre disponibles.

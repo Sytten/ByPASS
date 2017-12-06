@@ -2,14 +2,14 @@
 	\subsection{Code embarqué}
 	Le code de chaque composante embarquée est structuré de la même façon. À la racine du fichier, on observe les dossiers \emph{lib} (qui contient les bibliothèques utilisées) et \emph{src} (qui contient le code du projet). Les bibliothèques utilisées sont parfois maintenues par l’équipe, notamment pour le RFID, le clavier, le JSON et le Xbee (pour complémenter la librairie officielle). Cela permet de mettre à jour le code commun de toutes les composantes facilement lorsqu’il change. 
 
-	Au niveau du code source du projet, la sous-division dépend de la fonction de chaque composante, mais chaque fonction est encapsulée dans son propre fichier avec les fichiers sources et les en-têtes nécessaires. 
+	Au niveau du code source du projet, la sous-division dépend de la fonction de chaque composante, mais chaque fonction est encapsulée dans son propre fichier avec les fichiers sources et les en-têtes. 
 	\begin{description}
-		\item[Terminal de paiement] Contient des modules pour les entrées claviers (Input), pour la communication avec le serveur par Xbee (Server) et pour gérer les LED (\code{LED})
-		\item[Terminal de recharge] Contient le module pour la communication avec le serveur par Xbee (\code{Server})
-		\item[Pont] Contient le module pour la communication Xbee avec les terminaux (\code{Xbee}) et le module pour la communication Ethernet avec le serveur (\code{Server})
+		\item[Terminal de paiement] Contient des modules pour les entrées claviers, pour la communication avec le serveur par Xbee et pour gérer les LED
+		\item[Terminal de recharge] Contient le module pour la communication avec le serveur par Xbee
+		\item[Pont] Contient le module pour la communication Xbee avec les terminaux et le module pour la communication Ethernet avec le serveur 
 	\end{description}
 	
-	Dans tous les cas, les projets contiennent un fichier de configuration (\code{config}) qui permet de configurer la composante facilement. Ils contiennent également un fichier debug pour activer le mode debug (\code{debug} ou \code{BypassDebug}).
+	Dans tous les cas, les projets contiennent un fichier de configuration qui permet de configurer la composante facilement. Ils contiennent également un fichier debug pour activer le mode debug.
 
 	
 	\subsection{Code serveur}

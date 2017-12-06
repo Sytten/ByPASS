@@ -8,21 +8,22 @@
 \setlist[description]{leftmargin=\parindent,labelindent=\parindent}
 \usepackage{listings}
 \usepackage{pgf-umlsd}
+\usepackage{lscape}
 
 \begin{document}
 
 	\input{titlepage}
 
-%	\shipout\null
-	\begingroup
-	  \pagestyle{empty}
-	  \vspace*{\fill}
-	  {\centering%
-		  \includegraphics{Pictures/logo}%
-	  \par}
-	  \vspace*{\fill}
-	  \cleardoublepage
-	\endgroup
+%%	\shipout\null
+%	\begingroup
+%	  \pagestyle{empty}
+%	  \vspace*{\fill}
+%	  {\centering%
+%		  \includegraphics{Pictures/logo}%
+%	  \par}
+%	  \vspace*{\fill}
+%	  \cleardoublepage
+%	\endgroup
 	
 	\pagenumbering{roman}
 	\tableofcontents
@@ -37,12 +38,12 @@
     \include{Branchements}
     \include{ProcedureTests}
     \include{ExplicationsTechniques}
-    \include{Diagrammes}
+%    \include{Diagrammes}
     \include{StructureProjet}
    	\include{Reflexion}
    	\include{AmeliorationsFutures}
     \include{GestionProjet}
     \include{GestionRisques}
-    \include{SchemasElectriques}
+%    \include{SchemasElectriques}
         
 \end{document}
