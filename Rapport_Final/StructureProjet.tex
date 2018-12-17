@@ -1,0 +1,42 @@
+\section{Structure du code du projet}
+	\subsection{Code embarqué}
+	Le code de chaque composante embarquée est structuré de la même façon. À la racine du fichier, on observe les dossiers \emph{lib} (qui contient les bibliothèques utilisées) et \emph{src} (qui contient le code du projet). Les bibliothèques utilisées sont parfois maintenues par l’équipe, notamment pour le RFID, le clavier, le JSON et le Xbee (pour complémenter la librairie officielle). Cela permet de mettre à jour le code commun de toutes les composantes facilement lorsqu’il change. 
+
+	Au niveau du code source du projet, la sous-division dépend de la fonction de chaque composante, mais chaque fonction est encapsulée dans son propre fichier avec les fichiers sources et les en-têtes. 
+	\begin{description}
+		\item[Terminal de paiement] Contient des modules pour les entrées claviers, pour la communication avec le serveur par Xbee et pour gérer les LED
+		\item[Terminal de recharge] Contient le module pour la communication avec le serveur par Xbee
+		\item[Pont] Contient le module pour la communication Xbee avec les terminaux et le module pour la communication Ethernet avec le serveur 
+	\end{description}
+	
+	Dans tous les cas, les projets contiennent un fichier de configuration qui permet de configurer la composante facilement. Ils contiennent également un fichier debug pour activer le mode debug.
+
+	
+	\subsection{Code serveur}
+	Au niveau du code source pour le serveur, une organisation MVC est utilisée avec le framework Express de node.js. \\
+
+	\noindent Voici les fichiers de configuration importants :
+ 	%
+ 	\begin{description}
+ 		\item[Package.json] Liste des dépendances du projet et leurs versions 
+ 		\item[Server.js] Configuration du serveur
+ 		\item[Routes.js] Routes du serveur API
+ 		\item[Ejs\_routes.js] Routes de l’interface web
+ 		\item[Docker-compose.yml] Configuration de docker pour démarrer la base de données
+ 	\end{description}
+
+	\noindent Voici les dossiers important pour le développement :
+	%
+	\begin{description}
+		\item[Models] Comporte tous les modèles en relation avec la base de données
+		\item[Views] Comporte les vues pour le site web
+		\item [Controllers] Contient les contrôleurs qui font la relation entre les vues et le modèle et implémente les API REST.
+	\end{description}
+
+	\noindent Voici les dossiers importants pour l’aide au développement de l’application :
+	%
+	\begin{description}
+		\item[Test] Collection de tests automatisés à exécuter à avant d’envoyer du code sur github pour vérifier que les nouvelles fonctionnalités n’ont rien brisés. On devrait écrire un test pour chaque fonctionnalité au fur et à mesure qu’ils sont développés
+		\item[Migrations] Les migrations de la base de données
+		\item [Helpers] Des fonctions pour aider les contrôleurs et les modèles dans leurs tâches
+	\end{description}

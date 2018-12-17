@@ -1,0 +1,49 @@
+\documentclass{article}
+
+\input{preambule.tex}
+\usepackage{comment}
+\usepackage{longtable}
+\usepackage{csvsimple}
+\usepackage{enumitem}
+\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
+\usepackage{listings}
+\usepackage{pgf-umlsd}
+\usepackage{lscape}
+
+\begin{document}
+
+	\input{titlepage}
+
+%%	\shipout\null
+%	\begingroup
+%	  \pagestyle{empty}
+%	  \vspace*{\fill}
+%	  {\centering%
+%		  \includegraphics{Pictures/logo}%
+%	  \par}
+%	  \vspace*{\fill}
+%	  \cleardoublepage
+%	\endgroup
+	
+	\pagenumbering{roman}
+	\tableofcontents
+	\clearpage
+    
+    \pagenumbering{arabic}
+
+    \onehalfspacing
+    
+    \include{PresentationPrototype}
+    \include{CahierCharges}
+    \include{Branchements}
+    \include{ProcedureTests}
+    \include{ExplicationsTechniques}
+%    \include{Diagrammes}
+    \include{StructureProjet}
+   	\include{Reflexion}
+    \include{GestionProjet}
+    \include{GestionRisques}
+%    \include{SchemasElectriques}
+   	\include{AmeliorationsFutures}
+        
+\end{document}
