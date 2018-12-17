@@ -1,0 +1,18 @@
+\begin{sequencediagram}
+    \newthread{M}{MARCHAND}{}
+    \newinst[1]{GM}{GET\_MERCHANT\_ID}{}
+    \newinst[1]{E}{ENTER\_CART}{}
+    \newinst[1]{GC}{GET\_CART\_TOTAL}{}
+    \newinst[1]{R}{RFID}{}
+    \newinst[1]{P}{PAIEMENT}{}
+    \newthread{C}{CLIENT}{}
+%
+    \begin{messcall}{M}{Entre identifiant}{GM}\end{messcall}
+    \begin{messcall}{GM}{Marchand identifié}{E}\end{messcall}
+    \begin{messcall}{M}{Entre les articles achetés}{E}\end{messcall}
+    \begin{messcall}{E}{Panier rempli}{GC}\end{messcall}
+    \begin{messcall}{GC}{Obtention du montant à payer}{R}\end{messcall}
+    \begin{messcall}{C}{Présente sa carte}{R}\end{messcall}
+    \begin{messcall}{R}{Identification du client}{P}\end{messcall}
+    \begin{messcall}{P}{Paiement effectué}{E}\end{messcall}
+\end{sequencediagram}

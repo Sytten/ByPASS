@@ -1,0 +1,35 @@
+\documentclass{article}
+
+\input{preambule.tex}
+\usepackage{comment}
+\usepackage{pgfornament}
+\setlength\parindent{0pt}
+\newcommand{\tofill}[1]{\emph{#1}}
+
+\begin{document}
+
+	\input{titlepage}
+	
+	\pagenumbering{roman}
+	\tableofcontents
+	
+	\vfill
+
+	{\centering%
+	\pgfornament[width=5cm]{68}%
+	\par}
+	
+	\vfill
+	
+	\clearpage
+    
+    \pagenumbering{arabic}
+
+    \onehalfspacing
+    
+    \input{obligationsFormation}
+    \input{questions}
+    
+        
+        
+\end{document}

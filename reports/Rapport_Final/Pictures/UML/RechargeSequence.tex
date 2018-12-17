@@ -1,0 +1,16 @@
+\begin{sequencediagram}
+    \newthread{C}{Client}{}
+    \newinst[1]{R}{RFID}{}
+    \newinst[1]{G}{GET\_CLIENT\_INFO}{}
+    \newinst[1]{M}{MONNAYEUR}{}
+    \newinst[1]{S}{SEND\_DATA}{}
+%
+    \begin{messcall}{C}{Présente carte}{R}\end{messcall}
+    \begin{messcall}{R}{Carte lue}{G}\end{messcall}
+    \begin{messcall}{G}{Solde obtenu}{M}
+        \begin{messcall}{C}{Dépôt d'argent}{M}\end{messcall}
+        \begin{messcall}{C}{Appuie sur le bouton}{M}\end{messcall}
+    \end{messcall}
+    \begin{messcall}{M}{Bouton pressé}{S}\end{messcall}
+    \begin{messcall}{S}{Obtention du nouveau solde}{R}\end{messcall}
+\end{sequencediagram}

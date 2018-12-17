@@ -1,0 +1,17 @@
+\begin{sequencediagram}
+    \newthread{T}{Terminal}{}
+    \newinst[2]{X}{Xbee}{}
+    \newinst[1]{P}{Pont}{}
+    \newinst[1]{E}{Ethernet}{}
+    \newinst[2]{S}{Serveur}{}
+%
+    \begin{call}{T}{Requête Zigbee}{X}{Requête Zigbee}
+        \begin{call}{X}{Réception}{P}{Envoi}
+            \begin{call}{P}{Envoi}{E}{Réception}
+                \begin{call}{E}{Requête HTTP}{S}{Réponse HTTP}
+                    \begin{callself}{S}{Traitement}{}\end{callself}
+                \end{call}
+            \end{call}
+        \end{call}
+    \end{call}
+\end{sequencediagram}

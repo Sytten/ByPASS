@@ -1,0 +1,65 @@
+\begin{table}[hp]
+	\centering
+	\caption{Fonctionnalités du terminal de paiement}
+	\begin{tabular}{lP{2.5cm}P{2.5cm}P{2.5cm}P{2.5cm}ll}
+	\hline
+	\bf Code & \bf Fonctionnalité & \bf Objectif & \bf Description & \bf Contraintes & \bf Priorité & \bf Implanté \\
+	\hline
+	\hline
+	2.1 &
+	Effectuer un paiement &
+	Payer un article  &
+	Utiliser l’argent du compte client pour payer un produit &
+	1 paiement par 2-3 secondes. Argent canadien. &
+	1 &
+	\checkmark \\\\
+	%
+	2.2 &
+	Fonctionner sur batterie &
+	Le terminal de paiement doit être portatif &
+	Le terminal peut être facilement déplacé &
+	Durée : environ 12h &
+	1 &
+	\checkmark\\\\
+	%
+	2.3 &
+	Entrer le numéron de l’article acheté et la quantité &
+	Définir un prix pour chaque article dans la BD&
+	L’utilisateur doit être en mesure d’écrire le la quantité achetée de chaque article &
+	Entre 1 et 9 produits par marchand &
+	2 &
+	\checkmark \\\\
+	%
+	2.4 &
+	Afficher l’état du paiement &
+	Connaître l’état du paiement &
+	L’utilisateur doit être assuré que le paiement à fonctionner &
+	Au moins les informations sur autoriser ou non &
+	2 &
+	\checkmark\\\\
+	%
+	2.5 &
+	Lire le numéro d’un puce NFC &
+	Identifier le client &
+	Associer le numéro de carte à un compte dans la base de données &
+	Doit être capable de lire la carte à 1 cm &
+	3 &
+	\checkmark\\\\
+	%
+	2.6 &
+	Afficher le prix total de la transaction &
+	Connaître le prix total du panier &
+	L’utilisateur doit être en mesure de savoir le prix payé pour son achat &
+	Montrer jusqu’au 5~sous. Max 999\$ &
+	3 &
+	\checkmark\\
+	%
+	2.7 &
+	Détecter la position du terminal &
+	Connaître l’emplacement du terminal &
+	Être en mesure de connaître l’emplacement du terminal à tout moment &
+	6-7 mètres près &
+	4  \\\
+	\end{tabular}
+	\label{cahierPai}
+\end{table}
